@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Conseil &amp; Formation — Inès Ngono | Consultante en stratégie &amp; Formatrice en vente</title>
+<meta name="description" content="Cabinet de conseil en stratégie et formation en vente à Lyon. Inès Ngono accompagne écoles, entreprises et dirigeants (TPE-PME) pour maximiser leur performance commerciale."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --noir: #0f0e0d;
+    --ivoire: #f8f5ef;
+    --or: #b8965a;
+    --or-clair: #d4af74;
+    --or-pale: #f0e6d0;
+    --gris: #6b6660;
+    --gris-clair: #e8e3dc;
+    --blanc: #ffffff;
+    --radius: 2px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    background: var(--ivoire);
+    color: var(--noir);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(248,245,239,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--gris-clair);
+    padding: 0 5%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--noir);
+    text-decoration: none;
+    line-height: 1.2;
+  }
+  .nav-logo span { color: var(--or); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gris);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--noir); }
+
+  .btn-nav {
+    background: var(--noir);
+    color: var(--ivoire) !important;
+    padding: 0.55rem 1.4rem;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem !important;
+    transition: background 0.2s !important;
+  }
+  .btn-nav:hover { background: var(--or) !important; color: var(--blanc) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--noir);
+    transition: 0.3s;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: var(--ivoire);
+    border-bottom: 1px solid var(--gris-clair);
+    padding: 1.5rem 5% 2rem;
+    z-index: 99;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gris);
+    text-decoration: none;
+  }
+  .mobile-menu .btn-rdv-mobile {
+    display: inline-block;
+    background: var(--noir);
+    color: var(--ivoire);
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8% 6% 8% 8%;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--or);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--noir);
+    margin-bottom: 1.8rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--or);
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    color: var(--gris);
+    max-width: 420px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--noir);
+    color: var(--ivoire);
+    padding: 0.9rem 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.25s;
+  }
+  .btn-primary:hover { background: var(--or); }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1px solid var(--nor);
+    border-color: var(--gris);
+    color: var(--noir);
+    padding: 0.9rem 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.25s, color 0.25s;
+  }
+  .btn-outline:hover { border-color: var(--or); color: var(--or); }
+
+  .hero-stats {
+    margin-top: 4rem;
+    display: flex;
+    gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gris-clair);
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--noir);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-top: 0.3rem;
+  }
+
+  .hero-right {
+    background: var(--noir);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .hero-img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0.85;
+    mix-blend-mode: luminosity;
+  }
+
+  .hero-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    background: linear-gradient(160deg, #1a1714 0%, #2a2520 50%, #1a1714 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--or);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    gap: 1rem;
+  }
+  .hero-photo-placeholder svg {
+    opacity: 0.3;
+  }
+
+  .hero-gold-bar {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 4px;
+    height: 40%;
+    background: var(--or);
+  }
+
+  .hero-label {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ─── SECTION GÉNÉRIQUE ─── */
+  section { padding: 6rem 8%; }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--or);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--or); }
+
+  /* ─── EXPERTISE ─── */
+  #expertise {
+    background: var(--noir);
+    color: var(--ivoire);
+    padding: 6rem 8%;
+  }
+
+  #expertise .section-title { color: var(--ivoire); }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 4rem;
+  }
+
+  .expertise-card {
+    background: #1a1714;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .expertise-card:hover { background: #221e1a; }
+
+  .expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--or);
+    transition: height 0.4s;
+  }
+  .expertise-card:hover::before { height: 100%; }
+
+  .expertise-icon {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 1.5rem;
+  }
+
+  .expertise-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--ivoire);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .expertise-card p {
+    font-size: 0.88rem;
+    color: rgba(248,245,239,0.6);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .price-block {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+  }
+  .price-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--or-clair);
+    line-height: 1;
+  }
+  .price-detail {
+    font-size: 0.75rem;
+    color: rgba(248,245,239,0.45);
+    margin-top: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .expertise-cta {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 0.73rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--or);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  .expertise-cta:hover { border-color: var(--or); }
+
+  /* ─── À PROPOS ─── */
+  #apropos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8%;
+    align-items: center;
+    padding: 7rem 8%;
+  }
+
+  .apropos-img-col {
+    position: relative;
+  }
+  .apropos-photo-wrapper {
+    aspect-ratio: 3/4;
+    background: var(--gris-clair);
+    overflow: hidden;
+    position: relative;
+  }
+  .apropos-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .apropos-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #e8e3dc, #d4c9b8);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--gris);
+    text-align: center;
+    padding: 2rem;
+  }
+  .apropos-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--or);
+    color: var(--blanc);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+  .apropos-badge span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 0.2rem;
+  }
+
+  .apropos-text blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--or);
+    border-left: 2px solid var(--or);
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .apropos-text p {
+    font-size: 0.92rem;
+    color: var(--gris);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+  }
+  .apropos-text p strong { color: var(--noir); font-weight: 500; }
+
+  .diplomes {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--or-pale);
+    border-left: 2px solid var(--or);
+  }
+  .diplomes-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 0.8rem;
+  }
+  .diplomes li {
+    font-size: 0.82rem;
+    color: var(--gris);
+    list-style: none;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(184,150,90,0.15);
+  }
+  .diplomes li:last-child { border-bottom: none; }
+
+  /* ─── PARTENAIRES ─── */
+  #partenaires {
+    background: var(--ivoire);
+    padding: 4rem 8%;
+    border-top: 1px solid var(--gris-clair);
+    border-bottom: 1px solid var(--gris-clair);
+  }
+
+  .partenaires-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gris);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .partenaires-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 2.5rem;
+    align-items: center;
+  }
+
+  .partenaire-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gris);
+    letter-spacing: 0.04em;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--gris-clair);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .partenaire-item:hover { border-color: var(--or); color: var(--or); }
+
+  /* ─── TÉMOIGNAGES ─── */
+  #temoignages {
+    background: var(--ivoire);
+    padding: 6rem 8%;
+  }
+
+  .temoignages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    margin-top: 3.5rem;
+    background: var(--gris-clair);
+  }
+
+  .temoignage-card {
+    background: var(--ivoire);
+    padding: 2.5rem;
+    position: relative;
+  }
+
+  .stars {
+    color: var(--or);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .temoignage-card blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--noir);
+    margin-bottom: 1.5rem;
+  }
+
+  .temoignage-author {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gris);
+  }
+  .temoignage-author strong { color: var(--noir); display: block; font-size: 0.82rem; }
+
+  .add-temoignage {
+    background: var(--or-pale);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    cursor: pointer;
+    border: 1px dashed var(--or);
+    transition: background 0.2s;
+  }
+  .add-temoignage:hover { background: #ead9b8; }
+  .add-temoignage p {
+    font-size: 0.8rem;
+    color: var(--gris);
+    line-height: 1.5;
+  }
+  .add-temoignage a {
+    font-size: 0.73rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--or);
+    text-decoration: none;
+    border-bottom: 1px solid var(--or);
+    padding-bottom: 1px;
+  }
+
+  /* ─── NEWSLETTER ─── */
+  #newsletter {
+    background: var(--noir);
+    padding: 5rem 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .newsletter-left .section-title { color: var(--ivoire); }
+  .newsletter-left p {
+    font-size: 0.9rem;
+    color: rgba(248,245,239,0.55);
+    line-height: 1.8;
+    margin-top: 1rem;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .newsletter-form input,
+  .newsletter-form select {
+    background: #1a1714;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--ivoire);
+    padding: 0.9rem 1.2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .newsletter-form input::placeholder { color: rgba(248,245,239,0.3); }
+  .newsletter-form input:focus,
+  .newsletter-form select:focus { border-color: var(--or); }
+  .newsletter-form select { color: rgba(248,245,239,0.55); }
+  .newsletter-form select option { background: #1a1714; color: var(--ivoire); }
+
+  .newsletter-form button {
+    background: var(--or);
+    color: var(--blanc);
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .newsletter-form button:hover { background: var(--or-clair); }
+
+  .newsletter-mention {
+    font-size: 0.72rem;
+    color: rgba(248,245,239,0.3);
+    line-height: 1.5;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    padding: 6rem 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+
+  .contact-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: var(--noir);
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--or-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+  }
+  .contact-detail {
+    font-size: 0.88rem;
+    color: var(--gris);
+    line-height: 1.6;
+  }
+  .contact-detail strong { color: var(--noir); display: block; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .contact-detail a { color: var(--gris); text-decoration: none; }
+  .contact-detail a:hover { color: var(--or); }
+
+  .horaires-grid {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--gris-clair);
+  }
+  .horaires-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 0.8rem;
+  }
+  .horaire-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--gris);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--gris-clair);
+  }
+  .horaire-row:last-child { border-bottom: none; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    background: var(--blanc);
+    border: 1px solid var(--gris-clair);
+    color: var(--noir);
+    padding: 0.9rem 1.2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    resize: vertical;
+  }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: rgba(107,102,96,0.5); }
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus { border-color: var(--or); }
+
+  .contact-form textarea { min-height: 130px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .contact-form button {
+    background: var(--noir);
+    color: var(--ivoire);
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .contact-form button:hover { background: var(--or); }
+
+  .rdv-banner {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--or-pale);
+    border-left: 3px solid var(--or);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .rdv-banner p {
+    font-size: 0.88rem;
+    color: var(--noir);
+    line-height: 1.5;
+  }
+  .rdv-banner strong { display: block; font-size: 0.82rem; margin-bottom: 0.2rem; }
+  .rdv-banner a {
+    display: inline-block;
+    background: var(--or);
+    color: var(--blanc);
+    padding: 0.65rem 1.4rem;
+    font-size: 0.73rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .rdv-banner a:hover { background: var(--noir); }
+
+  /* ─── PRESSE ─── */
+  #presse {
+    padding: 4rem 8%;
+    background: var(--or-pale);
+    border-top: 1px solid rgba(184,150,90,0.2);
+  }
+  .presse-inner {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .presse-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--or);
+    white-space: nowrap;
+  }
+  .presse-divider {
+    width: 1px;
+    height: 30px;
+    background: rgba(184,150,90,0.3);
+  }
+  .presse-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 2rem;
+    align-items: center;
+  }
+  .presse-logos span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--gris);
+    font-style: italic;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--noir);
+    color: rgba(248,245,239,0.5);
+    padding: 3rem 8%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--ivoire);
+    margin-bottom: 0.8rem;
+  }
+  .footer-logo span { color: var(--or); }
+
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: rgba(248,245,239,0.35);
+    line-height: 1.6;
+    max-width: 260px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(248,245,239,0.4);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .social-link:hover { border-color: var(--or); color: var(--or); }
+
+  .footer-col h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 0.6rem; }
+  .footer-col a {
+    font-size: 0.82rem;
+    color: rgba(248,245,239,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--or); }
+
+  .footer-bottom {
+    background: #080706;
+    padding: 1.2rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    color: rgba(248,245,239,0.2);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* ─── TOAST ─── */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--noir);
+    color: var(--ivoire);
+    padding: 1rem 1.5rem;
+    font-size: 0.82rem;
+    z-index: 999;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.3s;
+    border-left: 3px solid var(--or);
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 0 5%; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 5% 3rem; }
+    .hero-right { min-height: 350px; }
+    .hero-stats { gap: 2rem; }
+
+    .expertise-grid { grid-template-columns: 1fr; }
+
+    #apropos { grid-template-columns: 1fr; }
+    .apropos-img-col { max-width: 320px; margin: 0 auto; }
+    .apropos-badge { right: -0.5rem; bottom: -0.5rem; }
+
+    .temoignages-grid { grid-template-columns: 1fr; }
+
+    #newsletter { grid-template-columns: 1fr; gap: 3rem; }
+
+    #contact { grid-template-columns: 1fr; gap: 3rem; }
+
+    footer { grid-template-columns: 1fr; gap: 2rem; }
+
+    .form-row { grid-template-columns: 1fr; }
+
+    section { padding: 4rem 5%; }
+    #expertise, #partenaires, #newsletter, #contact, #presse { padding-left: 5%; padding-right: 5%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Conseil <span>&</span> Formation<br><small style="font-size:0.65rem;letter-spacing:0.18em;font-family:'DM Sans',sans-serif;font-weight:300;color:var(--gris);text-transform:uppercase;">Inès Ngono</small></a>
+  <ul class="nav-links">
+    <li><a href="#expertise">Expertises</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://calendly.com/ngonoines/rendez-vous-audit" target="_blank" class="btn-nav">Prendre RDV</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#expertise" onclick="toggleMenu()">Expertises</a>
+  <a href="#apropos" onclick="toggleMenu()">À propos</a>
+  <a href="#temoignages" onclick="toggleMenu()">Témoignages</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="https://calendly.com/ngonoines/rendez-vous-audit" target="_blank" class="btn-rdv-mobile">Prendre rendez-vous →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow reveal">Cabinet de conseil · Lyon</div>
+    <h1 class="hero-title reveal">
+      Formez vos équipes.<br>
+      Structurez votre<br>
+      <em>stratégie.</em>
+    </h1>
+    <p class="hero-sub reveal">
+      Consultante en stratégie et formatrice en vente depuis plus de 12 ans, j'accompagne écoles, entreprises et dirigeants (TPE-PME) avec une approche exigeante, ancrée dans la réalité du terrain.
+    </p>
+    <div class="hero-ctas reveal">
+      <a href="#expertise" class="btn-primary">Découvrir les offres</a>
+      <a href="https://calendly.com/ngonoines/rendez-vous-audit" target="_blank" class="btn-outline">Première consultation gratuite</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat-item">
+        <div class="stat-num">+12</div>
+        <div class="stat-label">Ans dans la vente</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">+500</div>
+        <div class="stat-label">Vendeurs formés</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">+15</div>
+        <div class="stat-label">Ans d'entrepreneuriat</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrapper">
+      <div class="hero-photo-placeholder">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="22" r="12" stroke="#b8965a" stroke-width="1.5"/>
+          <path d="M8 55c0-12.15 9.85-22 22-22s22 9.85 22 22" stroke="#b8965a" stroke-width="1.5"/>
+        </svg>
+        <span>Photo d'Inès Ngono</span>
+        <small style="font-size:0.65rem;opacity:0.6;">(à remplacer)</small>
+      </div>
+    </div>
+    <div class="hero-gold-bar"></div>
+    <div class="hero-label">Conseil &amp; Formation · Lyon 2020</div>
+  </div>
+</section>
+
+<!-- PRESSE -->
+<div id="presse">
+  <div class="presse-inner reveal">
+    <span class="presse-label">Vue dans la presse</span>
+    <div class="presse-divider"></div>
+    <div class="presse-logos">
+      <span>Le Progrès</span>
+      <span>Le Dauphiné Libéré</span>
+      <span>L'Est Républicain</span>
+      <span>DNA Journal</span>
+      <span>L'Alsace</span>
+      <span>Le Bien Public</span>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERTISES -->
+<section id="expertise">
+  <div class="section-eyebrow" style="color:var(--or-clair)">
+    <span style="background:var(--or-clair);"></span>
+    Mes offres
+  </div>
+  <h2 class="section-title reveal">Deux expertises,<br>un seul <em>objectif</em></h2>
+
+  <div class="expertise-grid">
+    <!-- FORMATION -->
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">01 — Formation en vente</div>
+      <h3>Formation Commerce<br>&amp; Vente</h3>
+      <p>
+        Modules sur mesure destinés aux lycées, écoles de commerce et équipes commerciales d'entreprise. Techniques de vente en face-à-face et à distance, gestion de la relation client, argumentation et négociation.
+      </p>
+      <p style="color:rgba(248,245,239,0.45);font-size:0.82rem;">
+        Formations accréditées par l'Académie de Lyon (Région académique Auvergne-Rhône-Alpes), la S.A.A.R., la CAAC et les directeurs d'écoles privées sous contrat.
+      </p>
+      <div class="price-block">
+        <div class="price-main">À partir de 300 €</div>
+        <div class="price-detail">Intervention en école ou en entreprise · tarif personnalisé selon durée et contenu</div>
+      </div>
+      <a href="#contact" class="expertise-cta">Demander un devis →</a>
+    </div>
+
+    <!-- CONSEIL -->
+    <div class="expertise-card reveal">
+      <div class="expertise-icon">02 — Conseil en stratégie</div>
+      <h3>Accompagnement<br>Stratégique</h3>
+      <p>
+        Séances individuelles de conseil pour créateurs d'entreprise et dirigeants (TPE-PME). Structuration de projet, positionnement, développement commercial, entrée sur les marchés français et internationaux.
+      </p>
+      <p style="color:rgba(248,245,239,0.45);font-size:0.82rem;">
+        Première prise de contact offerte. Suivi flexible, en ligne ou en présentiel, adapté à votre rythme et à vos ressources.
+      </p>
+      <div class="price-block">
+        <div class="price-main">60 €<span style="font-size:1.2rem;color:rgba(212,175,116,0.7)"> / séance</span></div>
+        <div class="price-detail">50 € / séance à partir d'un pack 3 séances · première consultation gratuite</div>
+      </div>
+      <a href="https://calendly.com/ngonoines/rendez-vous-audit" target="_blank" class="expertise-cta">Réserver une séance →</a>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;padding:2rem;background:#1a1714;border-left:2px solid var(--or);max-width:640px;" class="reveal">
+    <p style="font-size:0.82rem;color:rgba(248,245,239,0.55);line-height:1.8;">
+      <strong style="color:var(--or-clair);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:0.5rem;">Références professionnelles</strong>
+      Pignol · Le Printemps de Lyon · Les Galeries Lafayette · Esprit · Villeroy &amp; Boch · Exodus · Karboon · Académie de Lyon · Lycée des Canuts · Lycée Saint-Joseph
+    </p>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos">
+  <div class="apropos-img-col reveal">
+    <div class="apropos-photo-wrapper">
+      <div class="apropos-photo-placeholder">
+        Photo d'Inès Ngono<br><small style="font-size:0.7rem;opacity:0.6;margin-top:0.5rem;display:block;">(à remplacer avec la vraie photo)</small>
+      </div>
+    </div>
+    <div class="apropos-badge">
+      +15
+      <span>ans</span>
+    </div>
+  </div>
+  <div class="apropos-text">
+    <div class="section-eyebrow reveal">À propos</div>
+    <h2 class="section-title reveal">Inès <em>Ngono</em></h2>
+    <blockquote class="reveal">
+      « Il n'existe pas de petites ressources, seulement de grandes idées. »
+    </blockquote>
+    <p class="reveal">
+      Consultante en stratégie diplômée et professeure de vente, <strong>Inès Ngono</strong> accompagne entreprises, écoles et organisations depuis la création de son cabinet à Lyon en 2020.
+    </p>
+    <p class="reveal">
+      Avec plus de <strong>15 ans d'entrepreneuriat</strong> et <strong>12 ans de spécialisation en vente</strong>, elle a formé plus de 500 futurs vendeurs et conseillé de nombreuses TPE et PME dans leur développement sur les marchés français et internationaux.
+    </p>
+    <p class="reveal">
+      Sa mission : <strong>structurer votre vision, affirmer votre positionnement et sécuriser votre développement</strong> en transformant chaque contrainte en opportunité de croissance.
+    </p>
+    <div class="diplomes reveal">
+      <div class="diplomes-title">Formation académique</div>
+      <ul>
+        <li>Master 2 Information-Communication, Stratégie de marque — ICOM, Univ. Lumière Lyon 2</li>
+        <li>Licence Information-Communication — ICOM, Univ. Lumière Lyon 2</li>
+        <li>Certificat de compétences en management des équipes — ESIC</li>
+      </ul>
+    </div>
+    <div style="margin-top:1.5rem;" class="reveal">
+      <a href="https://calendly.com/ngonoines/rendez-vous-audit" target="_blank" class="btn-primary">Prendre rendez-vous</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTENAIRES -->
+<div id="partenaires">
+  <div class="partenaires-label reveal">Ils m'ont fait confiance</div>
+  <div class="partenaires-list reveal">
+    <span class="partenaire-item">Académie de Lyon</span>
+    <span class="partenaire-item">Lycée des Canuts</span>
+    <span class="partenaire-item">Lycée Saint-Joseph</span>
+    <span class="partenaire-item">SEPR</span>
+    <span class="partenaire-item">Lycée Peyrefitte</span>
+    <span class="partenaire-item">Cité Scolaire Internationale</span>
+    <span class="partenaire-item">Art & Table</span>
+    <span class="partenaire-item">LJPRO</span>
+  </div>
+</div>
+
+<!-- TÉMOIGNAGES -->
+<section id="temoignages">
+  <div class="section-eyebrow reveal">Témoignages</div>
+  <h2 class="section-title reveal">Ce qu'ils disent<br>de <em>l'accompagnement</em></h2>
+
+  <div class="temoignages-grid">
+    <div class="temoignage-card reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>
+        « Inès a une capacité rare à rendre la vente accessible et motivante. Ses interventions au lycée ont vraiment changé notre façon d'aborder la relation client. »
+      </blockquote>
+      <div class="temoignage-author">
+        <strong>Élève en Bac Pro MCV</strong>
+        Lycée des Canuts · Lyon
+      </div>
+    </div>
+    <div class="temoignage-card reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>
+        « Un accompagnement stratégique vraiment structurant. En 3 séances, j'ai pu clarifier mon positionnement et définir un plan d'action concret pour mon lancement. »
+      </blockquote>
+      <div class="temoignage-author">
+        <strong>Créatrice d'entreprise</strong>
+        Secteur mode · Rhône-Alpes
+      </div>
+    </div>
+    <div class="temoignage-card add-temoignage reveal">
+      <div style="font-size:1.8rem;color:var(--or);opacity:0.5;">✦</div>
+      <p>Vous avez suivi une formation ou un accompagnement conseil ?</p>
+      <a href="https://www.google.com/search?q=Conseil+et+formation+-+Ines+Ngono" target="_blank">Laisser un avis Google →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="newsletter-left">
+    <div class="section-eyebrow" style="color:var(--or-clair)">
+      <span style="background:var(--or-clair);"></span>
+      Newsletter
+    </div>
+    <h2 class="section-title reveal" style="color:var(--ivoire);">Restez informé<br>des <em>actualités</em></h2>
+    <p class="reveal">Stratégie de vente, conseils commerciaux, retours terrain et nouveaux programmes de formation. Une newsletter claire, sans publicité, directement dans votre boîte mail.</p>
+  </div>
+  <div>
+    <form class="newsletter-form reveal" onsubmit="handleNewsletter(event)">
+      <input type="text" placeholder="Prénom et nom" required/>
+      <input type="email" placeholder="Adresse e-mail" required/>
+      <select>
+        <option value="" disabled selected>Je suis…</option>
+        <option value="dirigeant">Dirigeant(e) d'entreprise (TPE-PME)</option>
+        <option value="ecole">Responsable d'établissement scolaire</option>
+        <option value="commercial">Commercial / Équipe commerciale</option>
+        <option value="createur">Créateur(trice) d'entreprise</option>
+        <option value="etudiant">Étudiant(e)</option>
+      </select>
+      <button type="submit">S'abonner à la newsletter →</button>
+      <p class="newsletter-mention">En vous inscrivant, vous acceptez de recevoir des communications professionnelles d'Inès Ngono. Désinscription possible à tout moment.</p>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info">
+    <div class="section-eyebrow reveal">Contact</div>
+    <h2 class="section-title reveal">Parlons de<br>votre <em>projet</em></h2>
+    <div class="contact-item reveal">
+      <div class="contact-icon">✉</div>
+      <div class="contact-detail">
+        <strong>E-mail</strong>
+        <a href="mailto:ngonoines@yahoo.fr">ngonoines@yahoo.fr</a>
+      </div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-icon">☎</div>
+      <div class="contact-detail">
+        <strong>Téléphone</strong>
+        <a href="tel:+33652768159">06 52 76 81 59</a>
+      </div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-icon">◎</div>
+      <div class="contact-detail">
+        <strong>Zone d'intervention</strong>
+        Lyon et région Auvergne-Rhône-Alpes<br>
+        <span style="font-size:0.78rem;opacity:0.7;">Consultations en ligne disponibles</span>
+      </div>
+    </div>
+    <div class="horaires-grid reveal">
+      <div class="horaires-title">Horaires d'ouverture</div>
+      <div class="horaire-row"><span>Lundi – Jeudi</span><span>9h–12h · 13h–18h</span></div>
+      <div class="horaire-row"><span>Vendredi</span><span>9h–12h · 13h–17h</span></div>
+      <div class="horaire-row"><span>Week-end</span><span>Sur rendez-vous</span></div>
+    </div>
+    <div class="rdv-banner reveal">
+      <p><strong>Première consultation offerte</strong>Audit gratuit de 30 minutes pour évaluer vos besoins en formation ou conseil.</p>
+      <a href="https://calendly.com/ngonoines/rendez-vous-audit" target="_blank">Réserver en ligne →</a>
+    </div>
+  </div>
+
+  <div>
+    <form class="contact-form reveal" onsubmit="handleContact(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Prénom" required/>
+        <input type="text" placeholder="Nom" required/>
+      </div>
+      <input type="email" placeholder="E-mail" required/>
+      <input type="tel" placeholder="Téléphone (optionnel)"/>
+      <select required>
+        <option value="" disabled selected>Objet de la demande</option>
+        <option>Formation en vente – école</option>
+        <option>Formation en vente – entreprise</option>
+        <option>Conseil en stratégie individuel</option>
+        <option>Pack 3 séances de conseil</option>
+        <option>Partenariat / autre</option>
+      </select>
+      <textarea placeholder="Décrivez brièvement votre projet ou votre besoin…" required></textarea>
+      <button type="submit">Envoyer le message →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Conseil <span>&</span> Formation</div>
+    <p class="footer-tagline">Faciliter votre insertion sur le marché, structurer votre vision, accélérer votre croissance.</p>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/ngonoines1/" target="_blank" class="social-link" title="Facebook">fb</a>
+      <a href="https://www.youtube.com/@ngonoines" target="_blank" class="social-link" title="YouTube">yt</a>
+      <a href="https://www.linkedin.com/in/ines-ngono/" target="_blank" class="social-link" title="LinkedIn">in</a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>Services</h4>
+    <ul>
+      <li><a href="#expertise">Formation en vente</a></li>
+      <li><a href="#expertise">Conseil en stratégie</a></li>
+      <li><a href="https://calendly.com/ngonoines/rendez-vous-audit" target="_blank">Prendre rendez-vous</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>À propos</h4>
+    <ul>
+      <li><a href="#apropos">Inès Ngono</a></li>
+      <li><a href="#temoignages">Témoignages</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2020–2026 Cabinet Conseil &amp; Formation · Inès Ngono · Lyon</span>
+  <span>Mentions légales · Politique de confidentialité</span>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // Menu mobile
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // Formulaire contact
+  function handleContact(e) {
+    e.preventDefault();
+    showToast('Message envoyé ! Inès vous répondra dans les plus brefs délais.');
+    e.target.reset();
+  }
+
+  // Newsletter
+  function handleNewsletter(e) {
+    e.preventDefault();
+    showToast('Inscription confirmée ! Bienvenue dans la newsletter.');
+    e.target.reset();
+  }
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>
