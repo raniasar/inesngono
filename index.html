@@ -13,9 +13,13 @@
   --rouge-fonce: #9e0c23;
   --rouge-pale:  #fdf0f2;
   --rouge-leger: #f5c6cd;
+  
   --noir:        #1a1a1a;
-  --anthracite:  #2d2d2d;
   --blanc:       #ffffff;
+
+  --gris-fond: #ffffff;
+  --gris-claire: #ececec;
+  --gris-moyen: #666666;
   --texte:       #1a1a1a;
 }
 
@@ -166,7 +170,7 @@ nav{
   min-height:100vh;
   display:grid;grid-template-columns:1fr 1fr;
   padding-top:68px;
-  background:var(--noir);
+  background:var(--blanc);
 }
 .hero-left{
   display:flex;flex-direction:column;justify-content:center;
@@ -182,11 +186,11 @@ nav{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(2.8rem,5vw,4.6rem);
   font-weight:300;line-height:1.05;
-  color:var(--blanc);margin-bottom:1.8rem;
+  color:var(--noir);margin-bottom:1.8rem;
 }
 .hero-title em{font-style:italic;color:var(--rouge);}
 .hero-sub{
-  font-size:0.94rem;color:rgba(255,255,255,0.5);max-width:430px;
+  font-size:0.94rem;color:var(--gris-moyen);max-width:430px;
   margin-bottom:3rem;line-height:1.85;
 }
 .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;}
@@ -206,13 +210,13 @@ nav{
 .btn-outline:hover{border-color:var(--rouge);color:var(--rouge);}
 .hero-stats{
   margin-top:4rem;display:flex;gap:3rem;
-  padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:2rem;border-top:1px solid #e5e5e5;
 }
 .stat-num{
   font-family:'Cormorant Garamond',serif;font-size:2.8rem;
   font-weight:300;color:var(--rouge);line-height:1;
 }
-.stat-label{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:0.3rem;}
+.stat-label{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gris-moyen);}
 
 .hero-right{
   position:relative;overflow:hidden;
