@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Conseil & Formation — Inès Ngono | Consultante en stratégie & Formatrice en vente</title>
+<meta name="description" content="Cabinet de conseil en stratégie et formation en vente à Lyon. Inès Ngono accompagne écoles, entreprises et dirigeants (TPE-PME) pour maximiser leur performance commerciale."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style-premium.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#hero" class="logo-nav">
+    <img src="logo.jpg.webp" alt="Conseil & Formation — Inès Ngono"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+    <div class="logo-text" style="display:none;">Conseil <em>&amp;</em> Formation</div>
+  </a>
+  <div class="nav-right">
+    <a href="#hero" class="nav-link">Accueil</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle">Expertises</button>
+      <div class="nav-dropdown-menu">
+        <a href="#expertise">Formation en vente <span>Écoles, lycées, entreprises</span></a>
+        <a href="#expertise">Conseil en stratégie <span>TPE-PME, créateurs d'entreprise</span></a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle">À propos</button>
+      <div class="nav-dropdown-menu">
+        <a href="#apropos">Qui suis-je ? <span>À propos d'Inès Ngono</span></a>
+      </div>
+    </div>
+    <a href="#actualites" class="nav-link">Actualités</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#reservation" class="btn-rdv-nav">
+      <svg width="12" height="12" viewBox="0 0 13 13" fill="none"><rect x="1" y="2" width="11" height="10" rx="1" stroke="white" stroke-width="1.3"/><path d="M4 1v2M9 1v2M1 5h11" stroke="white" stroke-width="1.3"/></svg>
+      Prendre RDV
+    </a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero" onclick="toggleMenu()">Accueil</a>
+  <a href="#apropos" onclick="toggleMenu()">Qui suis-je ?</a>
+  <a href="#expertise" onclick="toggleMenu()" class="m-sub">Formation en vente</a>
+  <a href="#expertise" onclick="toggleMenu()" class="m-sub">Conseil en stratégie</a>
+  <a href="#actualites" onclick="toggleMenu()">Actualités</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#reservation" onclick="toggleMenu()" class="mobile-rdv">Prendre rendez-vous →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow reveal">Cabinet de conseil · Lyon</div>
+    <h1 class="hero-title reveal">
+      Formez vos équipes de vente et <em>structurez votre stratégie.</em>
+    </h1>
+    <p class="hero-sub reveal">
+      Consultante en stratégie et formatrice en vente depuis plus de 12 ans, j'accompagne écoles, entreprises et dirigeants (TPE-PME) avec une approche exigeante, ancrée dans la réalité du terrain.
+    </p>
+    <div class="hero-ctas reveal">
+      <a href="#expertise" class="btn-primary">Découvrir les offres</a>
+      <a href="#reservation" class="btn-outline">Consultation gratuite</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="hero-stat"><span class="stat-num">+12</span><span class="stat-label">Ans dans la vente</span></div>
+      <div class="hero-stat"><span class="stat-num">+500</span><span class="stat-label">Vendeurs formés</span></div>
+      <div class="hero-stat"><span class="stat-num">+15</span><span class="stat-label">Ans d'entrepreneuriat</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="hero-portrait.jpg" alt="Inès Ngono — Consultante en stratégie et formatrice en vente" class="hero-img"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="hero-img-placeholder" style="display:none;"><p>hero-portrait.jpg introuvable</p></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-badge"><strong>+500</strong><span>Vendeurs<br>formés</span></div>
+  </div>
+</section>
+
+<!-- PRESSE -->
+<div id="presse">
+  <div class="presse-header reveal">
+    <span class="presse-label">Vu dans la presse</span>
+    <div class="presse-rule"></div>
+  </div>
+  <div class="presse-marquee">
+    <div class="presse-track">
+      <div class="presse-logo">Le Progrès</div>
+      <div class="presse-logo">Le Dauphiné Libéré</div>
+      <div class="presse-logo">L'Est Républicain</div>
+      <div class="presse-logo">DNA Journal</div>
+      <div class="presse-logo">L'Alsace</div>
+      <div class="presse-logo">Le Bien Public</div>
+      <div class="presse-logo">Le Progrès</div>
+      <div class="presse-logo">Le Dauphiné Libéré</div>
+      <div class="presse-logo">L'Est Républicain</div>
+      <div class="presse-logo">DNA Journal</div>
+      <div class="presse-logo">L'Alsace</div>
+      <div class="presse-logo">Le Bien Public</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERTISES -->
+<section id="expertise">
+  <div class="expertise-head">
+    <div>
+      <div class="eyebrow reveal">Mes offres</div>
+      <h2 class="section-title reveal">Deux expertises,<br>un seul <em>objectif</em></h2>
+    </div>
+    <div class="expertise-head-right reveal">
+      <p>Accompagner la montée en compétences pour soutenir la croissance, la réussite et faciliter l'insertion sur le marché.</p>
+    </div>
+  </div>
+  <div class="expertise-grid">
+    <div class="expertise-card reveal">
+      <div class="expertise-roman">I — Formation en vente</div>
+      <h3>Formation Commerce<br>&amp; Vente</h3>
+      <p class="card-intro">Modules conçus sur mesure pour les écoles et les équipes commerciales, axés sur les techniques modernes de vente et la relation client.</p>
+      <ul class="service-list">
+        <li><strong>Modules sur mesure</strong> pour lycées, écoles de commerce et équipes commerciales d'entreprise</li>
+        <li><strong>Techniques de vente</strong> en face-à-face et à distance</li>
+        <li><strong>Gestion de la relation client</strong>, argumentation et négociation</li>
+        <li>Formations <strong>accréditées</strong> par l'Académie de Lyon, la S.A.A.R. et la CAAC</li>
+      </ul>
+      <div class="price-block">
+        <span class="price-label">Tarif indicatif</span>
+        <div class="price-amount"><sup>à partir de</sup>300<span class="price-unit"> €</span></div>
+        <p class="price-detail">Intervention en école ou entreprise · tarif personnalisé selon durée et contenu</p>
+      </div>
+      <div class="expertise-cta-wrap"><a href="#contact" class="btn-ghost">Demander un devis</a></div>
+    </div>
+    <div class="expertise-card reveal">
+      <div class="expertise-roman">II — Conseil en stratégie</div>
+      <h3>Accompagnement<br>Stratégique</h3>
+      <p class="card-intro">Séances individuelles d'accompagnement pour créateurs d'entreprise et dirigeants souhaitant structurer et accélérer leur développement.</p>
+      <ul class="service-list">
+        <li><strong>Séances individuelles</strong> pour créateurs d'entreprise et dirigeants (TPE-PME)</li>
+        <li><strong>Structuration de projet</strong> et positionnement marché</li>
+        <li><strong>Développement commercial</strong>, marchés français et internationaux</li>
+        <li><strong>Première prise de contact offerte</strong> · suivi en ligne ou en présentiel</li>
+      </ul>
+      <div class="price-block">
+        <span class="price-label">Séance individuelle</span>
+        <div class="price-amount">60<span class="price-unit"> € / séance</span></div>
+        <p class="price-detail">50 € / séance à partir d'un pack 3 séances · première consultation gratuite</p>
+      </div>
+      <div class="expertise-cta-wrap"><a href="#reservation" class="btn-ghost">Réserver une séance</a></div>
+    </div>
+  </div>
+  <div class="refs-block reveal">
+    <strong>Références professionnelles</strong>
+    <p>Pignol · Le Printemps de Lyon · Les Galeries Lafayette · Esprit · Villeroy &amp; Boch · Exodus · Karboon · Académie de Lyon · Lycée des Canuts · Lycée Saint-Joseph</p>
+  </div>
+</section>
+
+<!-- VIDÉO -->
+<section id="video" style="padding:0;">
+  <div class="yt-section">
+    <div class="yt-left">
+      <div class="yt-eyebrow">Ma chaîne YouTube</div>
+      <h2 class="yt-title">Conseils <em>pratiques</em><br>de vente &amp; stratégie</h2>
+      <p class="yt-desc">Chaque semaine, des conseils concrets sur la vente, la stratégie commerciale et l'entrepreneuriat — directement depuis le terrain, sans jargon.</p>
+      <div class="yt-stats">
+        <div><span class="yt-stat-num">+12</span><span class="yt-stat-label">Vidéos publiées</span></div>
+        <div><span class="yt-stat-num">100%</span><span class="yt-stat-label">Contenu gratuit</span></div>
+      </div>
+      <a href="https://www.youtube.com/@ngonoines" target="_blank" class="btn-yt">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="3" fill="#FF0000"/><path d="M10 9l5 3-5 3V9z" fill="white"/></svg>
+        Voir toutes les vidéos
+      </a>
+    </div>
+    <div class="yt-right">
+      <div class="yt-player-wrap">
+        <iframe id="ytMainPlayer" src="https://www.youtube.com/embed/ptgRxz2hEDU?rel=0"
+          title="Inès Ngono" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="yt-thumbs">
+        <div class="yt-thumb active" onclick="changeVideo('ptgRxz2hEDU',this)">
+          <div class="yt-thumb-placeholder"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="white"/></svg></div>
+          <div class="yt-thumb-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="white"/></svg></div>
+          <div class="yt-label">Conseils en vente</div>
+        </div>
+        <div class="yt-thumb" onclick="changeVideo('ptgRxz2hEDU',this)">
+          <div class="yt-thumb-placeholder"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="white"/></svg></div>
+          <div class="yt-thumb-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="white"/></svg></div>
+          <div class="yt-label">Stratégie commerciale</div>
+        </div>
+        <div class="yt-thumb" onclick="changeVideo('ptgRxz2hEDU',this)">
+          <div class="yt-thumb-placeholder"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="white"/></svg></div>
+          <div class="yt-thumb-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="white"/></svg></div>
+          <div class="yt-label">Entrepreneuriat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos">
+  <div class="apropos-img-col reveal">
+    <div class="apropos-photo-wrapper">
+      <img src="ines-portrait.jpg" alt="Inès Ngono"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="apropos-photo-placeholder" style="display:none;"><p>ines-portrait.jpg introuvable</p></div>
+    </div>
+    <div class="apropos-badge"><span class="badge-num">+15</span><span class="badge-label">ans</span></div>
+  </div>
+  <div class="apropos-content">
+    <div class="eyebrow reveal">À propos</div>
+    <h2 class="section-title reveal">Inès <em>Ngono</em></h2>
+    <blockquote class="reveal">« Il n'existe pas de petites ressources, seulement de grandes idées. »</blockquote>
+    <p class="reveal">Consultante en stratégie diplômée et professeure de vente, <strong>Inès Ngono</strong> accompagne entreprises, écoles et organisations depuis la création de son cabinet à Lyon en 2020.</p>
+    <p class="reveal">Avec plus de <strong>15 ans d'entrepreneuriat</strong> et <strong>12 ans de spécialisation en vente</strong>, elle a formé plus de 500 futurs vendeurs et conseillé de nombreuses TPE et PME dans leur développement.</p>
+    <p class="reveal">Sa mission : <strong>structurer votre vision, affirmer votre positionnement et sécuriser votre développement</strong> en transformant chaque contrainte en opportunité de croissance.</p>
+    <div class="diplomes reveal">
+      <div class="diplomes-title">Formation académique</div>
+      <ul>
+        <li>Master 2 Information-Communication, Stratégie de marque — ICOM, Univ. Lumière Lyon 2</li>
+        <li>Licence Information-Communication — ICOM, Univ. Lumière Lyon 2</li>
+        <li>Certificat de compétences en management des équipes — ESIC</li>
+      </ul>
+    </div>
+    <div class="refs-apropos reveal">
+      <strong>Domaines d'expertise</strong>
+      <div class="refs-tags">
+        <span>Formation commerciale</span><span>Stratégie</span>
+        <span>Management</span><span>Accompagnement dirigeants</span>
+      </div>
+    </div>
+    <div style="margin-top:2rem;" class="reveal"><a href="#reservation" class="btn-primary">Prendre rendez-vous</a></div>
+  </div>
+</section>
+
+<!-- PARTENAIRES -->
+<div id="partenaires">
+  <div class="partenaires-label reveal">Ils m'ont fait confiance</div>
+  <div class="partenaires-list reveal">
+    <span class="partenaire-item">Académie de Lyon</span>
+    <span class="partenaire-item">Lycée des Canuts</span>
+    <span class="partenaire-item">Lycée Saint-Joseph</span>
+    <span class="partenaire-item">SEPR</span>
+    <span class="partenaire-item">Lycée Peyrefitte</span>
+    <span class="partenaire-item">Cité Scolaire Internationale</span>
+    <span class="partenaire-item">Art &amp; Table</span>
+    <span class="partenaire-item">LJPRO</span>
+  </div>
+</div>
+
+<!-- ACTUALITÉS -->
+<section id="actualites">
+  <div class="actu-intro">
+    <div>
+      <div class="eyebrow reveal">Le Mag</div>
+      <h2 class="section-title reveal">Les dernières <em>actualités</em></h2>
+    </div>
+    <a href="https://conseiletformation.com" target="_blank" class="btn-outline reveal" style="align-self:flex-end;">Voir tous les articles</a>
+  </div>
+  <div class="actu-grid">
+    <a href="https://conseiletformation.com/de-lidee-au-produit-retour-sur-un-projet-pedagogique-concret/" target="_blank" class="actu-card reveal">
+      <div class="actu-meta"><span class="actu-cat">Le Mag</span><span class="actu-sep"></span><span class="actu-date">17 avril 2026</span></div>
+      <h3>De l'idée au produit : retour sur un projet pédagogique concret</h3>
+      <p class="actu-excerpt">31 élèves, un budget de 164 € et une idée simple — retour sur un projet validé et soutenu par la direction qui illustre parfaitement la devise du cabinet.</p>
+      <span class="actu-link">Lire l'article</span>
+    </a>
+    <a href="https://conseiletformation.com/restauration-vs-patisserie-ou-investir-aujourdhui/" target="_blank" class="actu-card reveal">
+      <div class="actu-meta"><span class="actu-cat">Le Mag</span><span class="actu-sep"></span><span class="actu-date">15 avril 2026</span></div>
+      <h3>Restauration vs pâtisserie : où investir aujourd'hui ?</h3>
+      <p class="actu-excerpt">Inflation, hausse des coûts, pression sur les marges… Lequel de ces deux secteurs offre les meilleures perspectives ? Analyse et leviers pour réussir.</p>
+      <span class="actu-link">Lire l'article</span>
+    </a>
+    <a href="https://conseiletformation.com/limportance-du-conditionnement-dans-la-strategie-de-vente/" target="_blank" class="actu-card reveal">
+      <div class="actu-meta"><span class="actu-cat">Le Mag</span><span class="actu-sep"></span><span class="actu-date">15 avril 2026</span></div>
+      <h3>L'importance du conditionnement dans la stratégie de vente</h3>
+      <p class="actu-excerpt">Souvent sous-estimé, le conditionnement joue un rôle aussi déterminant que la qualité du produit pour capter l'attention des consommateurs.</p>
+      <span class="actu-link">Lire l'article</span>
+    </a>
+    <a href="https://conseiletformation.com/ce-quil-faut-faire-pour-construire-largumentaire-de-vente-pour-bien-vendre-son-produit/" target="_blank" class="actu-card reveal">
+      <div class="actu-meta"><span class="actu-cat">Le Mag</span><span class="actu-sep"></span><span class="actu-date">9 févr. 2026</span></div>
+      <h3>Comment construire un argumentaire de vente efficace</h3>
+      <p class="actu-excerpt">La difficulté à conclure vient rarement d'un manque de motivation, mais d'un argumentaire mal structuré.</p>
+      <span class="actu-link">Lire l'article</span>
+    </a>
+    <a href="https://conseiletformation.com/echange-avec-le-president-de-la-republique-francaise-sur-la-dependance-aux-reseaux-sociaux-chez-les-jeunes/" target="_blank" class="actu-card reveal">
+      <div class="actu-meta"><span class="actu-cat">Le Mag</span><span class="actu-sep"></span><span class="actu-date">29 nov. 2025</span></div>
+      <h3>Échange avec le Président sur la dépendance aux réseaux sociaux</h3>
+      <p class="actu-excerpt">Présente à Mirecourt lors d'un meeting, Inès a posé une question essentielle sur la prévention chez les jeunes.</p>
+      <span class="actu-link">Lire l'article</span>
+    </a>
+    <a href="https://conseiletformation.com/vente-en-face-a-face-5-phrases-a-ne-jamais-dire-a-un-client/" target="_blank" class="actu-card reveal">
+      <div class="actu-meta"><span class="actu-cat">Le Mag</span><span class="actu-sep"></span><span class="actu-date">3 août 2025</span></div>
+      <h3>Vente en face-à-face : 5 phrases à ne jamais dire</h3>
+      <p class="actu-excerpt">La vente en face-à-face demande une posture et un vocabulaire bien différents de la vente à distance. Voici les formulations qui tuent une vente.</p>
+      <span class="actu-link">Lire l'article</span>
+    </a>
+  </div>
+</section>
+
+<!-- AVIS GOOGLE -->
+<section id="avis">
+  <div class="avis-header">
+    <div>
+      <div class="eyebrow reveal">Avis clients</div>
+      <h2 class="section-title reveal">Ce qu'ils disent sur <em>Google</em></h2>
+    </div>
+    <div class="avis-rating-global reveal">
+      <div class="avis-score-big" id="globalScore">5,0</div>
+      <div>
+        <span class="avis-stars-big" id="globalStars">★★★★★</span>
+        <div class="avis-total" id="globalTotal">Basé sur les avis Google</div>
+        <div class="avis-google-badge" style="margin-top:0.5rem;">
+          <svg width="13" height="13" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <span class="google-color">Google Reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="avis-grid" id="avisGrid"><div class="avis-loading">Chargement des avis…</div></div>
+  <div class="avis-cta-wrap reveal">
+    <a href="https://www.google.com/search?q=Conseil+et+formation+-+Ines+Ngono+Lyon" target="_blank" class="btn-google-avis">
+      <svg width="13" height="13" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      Voir tous les avis Google
+    </a>
+  </div>
+</section>
+
+<!-- RÉSERVATION -->
+<section id="reservation">
+  <div class="eyebrow reveal">Rendez-vous</div>
+  <h2 class="section-title reveal">Réservez votre<br><em>consultation</em></h2>
+  <p class="reveal">Choisissez un créneau, renseignez vos informations — vous recevrez une confirmation immédiate.</p>
+  <div class="rdv-container" id="rdvContainer">
+    <div class="rdv-cal-wrap reveal">
+      <div class="calendar-header">
+        <h4 id="calMonthTitle"></h4>
+        <div class="cal-nav">
+          <button onclick="changeMonth(-1)">&#8249;</button>
+          <button onclick="changeMonth(1)">&#8250;</button>
+        </div>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+      <div class="time-slots-section" id="timeSlotsSection" style="display:none;">
+        <div class="time-slots-title" id="timeSlotsTitle"></div>
+        <div class="time-slots" id="timeSlots"></div>
+      </div>
+    </div>
+    <div class="rdv-form-wrap reveal">
+      <div class="rdv-selected-slot" id="rdvSelectedSlot">
+        <strong>Créneau sélectionné</strong>
+        <span id="rdvSlotText"></span>
+      </div>
+      <form class="rdv-form" id="rdvForm" onsubmit="submitRdv(event)">
+        <div class="form-row">
+          <input type="text" placeholder="Prénom *" required id="rdvPrenom"/>
+          <input type="text" placeholder="Nom *" required id="rdvNom"/>
+        </div>
+        <input type="email" placeholder="Adresse e-mail *" required id="rdvEmail"/>
+        <input type="tel" placeholder="Téléphone *" required id="rdvTel"/>
+        <select required id="rdvType">
+          <option value="" disabled selected>Type de consultation *</option>
+          <option>Consultation gratuite (30 min)</option>
+          <option>Séance de conseil stratégique (60 min)</option>
+          <option>Devis formation en vente</option>
+          <option>Pack 3 séances de conseil</option>
+        </select>
+        <textarea placeholder="Décrivez brièvement votre projet (optionnel)" id="rdvMessage"></textarea>
+        <p class="rdv-form-note">* Champs obligatoires. Confirmation par e-mail sous 24h.</p>
+        <button type="submit" id="rdvSubmitBtn" disabled>Confirmer le rendez-vous →</button>
+      </form>
+      <div class="rdv-confirmation" id="rdvConfirmation">
+        <div class="rdv-check">✓</div>
+        <h3>Rendez-vous confirmé !</h3>
+        <div class="slot-recap" id="confirmSlotRecap"></div>
+        <p>Un e-mail de confirmation a été envoyé à <strong id="confirmEmail"></strong>.<br>Inès vous contactera avant votre séance.</p>
+        <button class="rdv-reset" onclick="resetRdv()">Prendre un autre rendez-vous</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="newsletter-left">
+    <div class="eyebrow">Newsletter</div>
+    <h2 class="section-title reveal">Restez informé<br>des <em>actualités</em></h2>
+    <p class="reveal">Stratégie de vente, conseils commerciaux, retours terrain et nouveaux programmes. Une newsletter claire, sans publicité.</p>
+  </div>
+  <div>
+    <form class="newsletter-form reveal" onsubmit="handleNewsletter(event)">
+      <input type="text" placeholder="Prénom et nom" required/>
+      <input type="email" placeholder="Adresse e-mail" required/>
+      <select>
+        <option value="" disabled selected>Je suis…</option>
+        <option>Dirigeant(e) d'entreprise (TPE-PME)</option>
+        <option>Responsable d'établissement scolaire</option>
+        <option>Commercial / Équipe commerciale</option>
+        <option>Créateur(trice) d'entreprise</option>
+        <option>Étudiant(e)</option>
+      </select>
+      <button type="submit">S'abonner à la newsletter →</button>
+      <p class="newsletter-mention">En vous inscrivant, vous acceptez de recevoir des communications professionnelles d'Inès Ngono. Désinscription possible à tout moment.</p>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="section-title reveal">Parlons de<br>votre <em>projet</em></h2>
+    <div class="contact-item reveal">
+      <div class="contact-icon">✉</div>
+      <div class="contact-detail"><strong>E-mail</strong><a href="mailto:ngonoines@yahoo.fr">ngonoines@yahoo.fr</a></div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-icon">☎</div>
+      <div class="contact-detail"><strong>Téléphone</strong><a href="tel:+33652768159">06 52 76 81 59</a></div>
+    </div>
+    <div class="contact-item reveal">
+      <div class="contact-icon">◎</div>
+      <div class="contact-detail"><strong>Zone d'intervention</strong>Lyon et région Auvergne-Rhône-Alpes<br><span style="font-size:0.76rem;opacity:0.7;">Consultations en ligne disponibles</span></div>
+    </div>
+    <div class="horaires-grid reveal">
+      <div class="horaires-title">Horaires d'ouverture</div>
+      <div class="horaire-row"><span>Lundi – Jeudi</span><span>9h–12h · 13h–18h</span></div>
+      <div class="horaire-row"><span>Vendredi</span><span>9h–12h · 13h–17h</span></div>
+      <div class="horaire-row"><span>Week-end</span><span>Sur rendez-vous</span></div>
+    </div>
+    <div class="rdv-banner reveal">
+      <p><strong>Première consultation offerte</strong>Audit gratuit de 30 minutes pour évaluer vos besoins.</p>
+      <a href="#reservation">Réserver →</a>
+    </div>
+  </div>
+  <div>
+    <form class="contact-form reveal" onsubmit="handleContact(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Prénom" required/>
+        <input type="text" placeholder="Nom" required/>
+      </div>
+      <input type="email" placeholder="E-mail" required/>
+      <input type="tel" placeholder="Téléphone (optionnel)"/>
+      <select required>
+        <option value="" disabled selected>Objet de la demande</option>
+        <option>Formation en vente – école</option>
+        <option>Formation en vente – entreprise</option>
+        <option>Conseil en stratégie individuel</option>
+        <option>Pack 3 séances de conseil</option>
+        <option>Partenariat / autre</option>
+      </select>
+      <textarea placeholder="Décrivez brièvement votre projet…" required></textarea>
+      <button type="submit">Envoyer le message →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Conseil <span>&amp;</span> Formation</div>
+    <p class="footer-tagline">Faciliter votre insertion sur le marché, structurer votre vision, accélérer votre croissance.</p>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/ngonoines1/" target="_blank" class="social-link">fb</a>
+      <a href="https://www.youtube.com/@ngonoines" target="_blank" class="social-link">yt</a>
+      <a href="https://www.linkedin.com/in/ines-ngono/" target="_blank" class="social-link">in</a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>Services</h4>
+    <ul>
+      <li><a href="#expertise">Formation en vente</a></li>
+      <li><a href="#expertise">Conseil en stratégie</a></li>
+      <li><a href="#reservation">Prendre rendez-vous</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="#apropos">Qui suis-je ?</a></li>
+      <li><a href="#actualites">Actualités</a></li>
+      <li><a href="#avis">Avis Google</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2020–2026 Cabinet Conseil &amp; Formation · Inès Ngono · Lyon</span>
+  <span>Mentions légales · Politique de confidentialité</span>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+});
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); revObs.unobserve(e.target); }
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+function showToast(msg) {
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+function changeVideo(id, thumb) {
+  document.getElementById('ytMainPlayer').src = 'https://www.youtube.com/embed/' + id + '?rel=0&autoplay=1';
+  document.querySelectorAll('.yt-thumb').forEach(t => t.classList.remove('active')); thumb.classList.add('active');
+}
+
+const GOOGLE_API_KEY = '', GOOGLE_PLACE_ID = '';
+const avisDemo = [
+  { author_name: 'Sophie M.', rating: 5, relative_time_description: 'il y a 2 mois', text: "Inès a une pédagogie remarquable. Ses interventions au lycée ont transformé l'approche commerciale de nos élèves. Je recommande vivement son expertise." },
+  { author_name: 'Laurent B.', rating: 5, relative_time_description: 'il y a 3 mois', text: "Un accompagnement vraiment structurant. En 3 séances, j'ai pu clarifier mon positionnement et définir un plan d'action concret pour mon lancement. Merci Inès !" },
+  { author_name: 'Nadia K.', rating: 5, relative_time_description: 'il y a 4 mois', text: "Professionnalisme, écoute et expertise terrain. Inès m'a aidée à repositionner mon offre et à structurer ma démarche commerciale. Résultats visibles dès le premier mois." }
+];
+function renderAvis(reviews) {
+  const grid = document.getElementById('avisGrid'); grid.innerHTML = '';
+  reviews.forEach(r => {
+    const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+    const card = document.createElement('div'); card.className = 'avis-card reveal';
+    card.innerHTML = `<div class="avis-top"><div><div class="avis-author-name">${r.author_name}</div><div class="avis-author-date">${r.relative_time_description}</div></div><div class="avis-stars">${stars}</div></div><div class="avis-text">« ${r.text} »</div>`;
+    grid.appendChild(card); revObs.observe(card);
+  });
+}
+async function loadGoogleAvis() {
+  if (GOOGLE_API_KEY && GOOGLE_PLACE_ID) {
+    try {
+      const res = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${GOOGLE_PLACE_ID}&fields=rating,user_ratings_total,reviews&language=fr&key=${GOOGLE_API_KEY}`);
+      const data = await res.json();
+      if (data.result) {
+        const r = data.result;
+        document.getElementById('globalScore').textContent = (r.rating||5).toFixed(1).replace('.',',');
+        document.getElementById('globalTotal').textContent = `Basé sur ${r.user_ratings_total||0} avis Google`;
+        if (r.reviews && r.reviews.length > 0) { renderAvis(r.reviews.slice(0,6)); return; }
+      }
+    } catch(e) { console.log('API Google Places non disponible.'); }
+  }
+  renderAvis(avisDemo);
+}
+loadGoogleAvis();
+
+const MONTHS = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const DAYS = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+const DAYNAMES = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+let curMonth = new Date(2026, 5, 1), selDay = null, selTime = null;
+
+function buildCal() {
+  const grid = document.getElementById('calendarGrid');
+  document.getElementById('calMonthTitle').textContent = MONTHS[curMonth.getMonth()] + ' ' + curMonth.getFullYear();
+  grid.innerHTML = '';
+  DAYS.forEach(d => { const el = document.createElement('div'); el.className = 'cal-day-name'; el.textContent = d; grid.appendChild(el); });
+  const first = new Date(curMonth.getFullYear(), curMonth.getMonth(), 1);
+  let startDow = first.getDay(); startDow = startDow === 0 ? 6 : startDow - 1;
+  const daysIn = new Date(curMonth.getFullYear(), curMonth.getMonth()+1, 0).getDate();
+  const today = new Date(); today.setHours(0,0,0,0);
+  for (let i = 0; i < startDow; i++) { const el = document.createElement('div'); el.className = 'cal-day empty'; grid.appendChild(el); }
+  for (let d = 1; d <= daysIn; d++) {
+    const date = new Date(curMonth.getFullYear(), curMonth.getMonth(), d), dow = date.getDay();
+    const el = document.createElement('div'); el.className = 'cal-day'; el.textContent = d;
+    if (date < today || dow === 0 || dow === 6) { el.classList.add('past'); }
+    else { el.addEventListener('click', () => selectDay(date)); }
+    if (date.getFullYear()===today.getFullYear() && date.getMonth()===today.getMonth() && date.getDate()===today.getDate()) el.classList.add('today');
+    if (selDay && date.toDateString()===selDay.toDateString()) el.classList.add('selected');
+    grid.appendChild(el);
+  }
+}
+function changeMonth(dir) {
+  curMonth = new Date(curMonth.getFullYear(), curMonth.getMonth()+dir, 1); buildCal();
+}
+function selectDay(date) {
+  selDay = date; selTime = null; buildCal();
+  const section = document.getElementById('timeSlotsSection');
+  const title = document.getElementById('timeSlotsTitle');
+  const slots = document.getElementById('timeSlots');
+  section.style.display = 'block';
+  title.textContent = DAYNAMES[date.getDay()] + ' ' + date.getDate() + ' ' + MONTHS[date.getMonth()];
+  const available = ['09:00','10:00','11:00','14:00','15:00','16:00','17:00'];
+  const unavail = ['11:00','15:00'];
+  slots.innerHTML = '';
+  available.forEach(t => {
+    const btn = document.createElement('button'); btn.type='button'; btn.className='time-slot'; btn.textContent=t;
+    if (unavail.includes(t)) { btn.classList.add('unavailable'); }
+    else { btn.addEventListener('click', () => selectTime(t, btn)); }
+    slots.appendChild(btn);
+  });
+  updateSlotDisplay();
+}
+function selectTime(time, btn) {
+  selTime = time;
+  document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  updateSlotDisplay();
+}
+function updateSlotDisplay() {
+  const slot = document.getElementById('rdvSelectedSlot');
+  const txt = document.getElementById('rdvSlotText');
+  const btn = document.getElementById('rdvSubmitBtn');
+  if (selDay && selTime) {
+    const label = DAYNAMES[selDay.getDay()] + ' ' + selDay.getDate() + ' ' + MONTHS[selDay.getMonth()] + ' ' + selDay.getFullYear() + ' à ' + selTime;
+    txt.textContent = label; slot.classList.add('show'); btn.disabled = false;
+  } else { slot.classList.remove('show'); btn.disabled = true; }
+}
+function submitRdv(e) {
+  e.preventDefault();
+  const label = DAYNAMES[selDay.getDay()] + ' ' + selDay.getDate() + ' ' + MONTHS[selDay.getMonth()] + ' ' + selDay.getFullYear() + ' à ' + selTime;
+  document.getElementById('confirmSlotRecap').textContent = label;
+  document.getElementById('confirmEmail').textContent = document.getElementById('rdvEmail').value;
+  document.getElementById('rdvForm').style.display = 'none';
+  document.getElementById('rdvSelectedSlot').style.display = 'none';
+  document.getElementById('rdvConfirmation').classList.add('show');
+}
+function resetRdv() {
+  selDay = null; selTime = null; buildCal();
+  document.getElementById('rdvForm').style.display = 'flex';
+  document.getElementById('rdvForm').reset();
+  document.getElementById('rdvConfirmation').classList.remove('show');
+  document.getElementById('timeSlotsSection').style.display = 'none';
+  updateSlotDisplay();
+}
+buildCal();
+
+function handleNewsletter(e) { e.preventDefault(); showToast('Inscription confirmée — merci !'); e.target.reset(); }
+function handleContact(e) { e.preventDefault(); showToast('Message envoyé — réponse sous 24h.'); e.target.reset(); }
+</script>
+</body>
+</html>
