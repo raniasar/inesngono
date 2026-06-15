@@ -2,18 +2,19 @@
   --dark: #09090F;
   --dark2: #12121C;
   --dark3: #1A1A28;
-  --accent: #C84B31;
-  --accent-light: #E05A3E;
+  --accent: #961B1E; /* rouge */
+  --accent-light: #B32024; /* rouge clair */
   --ivory: #F7F4EF;
   --ivory2: #EDE9E1;
   --white: #FFFFFF;
-  --muted: rgba(255,255,255,0.45);
-  --muted2: rgba(255,255,255,0.22);
-  --border: rgba(255,255,255,0.08);
+  --muted: rgba(0,0,0,0.55); /* gris foncé pour sections blanches */
+  --muted2: rgba(0,0,0,0.35);
+  --border: rgba(0,0,0,0.12);
   --border-light: rgba(0,0,0,0.08);
   --f-sans: 'Inter', system-ui, sans-serif;
   --f-serif: 'DM Serif Display', Georgia, serif;
 }
+
 
 *, *::before, *::after {
   margin: 0;
@@ -124,50 +125,43 @@ nav.scrolled {
 
 /* HERO */
 #hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 74px clamp(1.5rem, 5vw, 5rem) 0;
-  position: relative;
-  overflow: hidden;
-  background: var(--dark);
+  background: #FFFFFF !important;
+  color: #000000 !important;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 5rem 0;
+.hero-h1 {
+  color: #000000 !important;
+}
+
+.hero-h1 em {
+  color: #961B1E !important;
+}
+
+.hero-sub {
+  color: #555555 !important;
+}
+
+.btn-primary {
+  background: #961B1E !important;
+  color: #FFFFFF !important;
+}
+
+.btn-primary:hover {
+  background: #B32024 !important;
+}
+
+.btn-secondary {
+  background: #F5F5F5 !important;
+  color: #333333 !important;
+  border-color: #DDD !important;
 }
 
 .hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: rgba(200,75,49,0.12);
-  border: 1px solid rgba(200,75,49,0.3);
-  color: #F09B8A;
-  padding: 0.4rem 1rem;
-  border-radius: 100px;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 1.75rem;
+  background: rgba(150,27,30,0.12) !important;
+  border: 1px solid rgba(150,27,30,0.3) !important;
+  color: #961B1E !important;
 }
 
-.hero-tag::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: #C84B31;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
 
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
