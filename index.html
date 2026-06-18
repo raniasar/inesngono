@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Inès Ngono — Conseil & Formation · Lyon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Couleurs */
+  --bordeaux:       #961B1E;
+  --bordeaux-dark:  #720F12;
+  --bordeaux-light: #B52226;
+  --bordeaux-pale:  rgba(150,27,30,0.08);
+  --bordeaux-mid:   rgba(150,27,30,0.15);
+
+  --noir:    #0A0A0A;
+  --noir-2:  #141414;
+  --blanc:   #FFFFFF;
+  --gris-f:  #F5F4F2;
+  --gris-m:  #E8E4E2;
+  --gris-t:  #6B6560;
+  --gris-d:  #A8A3A0;
+
+  --border-light: rgba(0,0,0,0.09);
+  --border-dark:  rgba(255,255,255,0.10);
+
+  /* Typo */
+  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --section-py: clamp(5rem, 10vw, 9rem);
+  --section-px: clamp(1.5rem, 6vw, 6rem);
+  --max-w:      1180px;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 32px;
+
+  /* Ombre */
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
+  --shadow-lg: 0 24px 64px rgba(0,0,0,0.14);
+  --shadow-bordeaux: 0 20px 60px rgba(150,27,30,0.28);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  font-family: var(--sans);
+  background: var(--blanc);
+  color: var(--noir);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { display:block; max-width:100%; }
+a { text-decoration:none; color:inherit; }
+
+/* ============================================================
+   UTILITAIRES
+   ============================================================ */
+.u-container { max-width: var(--max-w); margin: 0 auto; }
+.u-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  margin-bottom: 1.25rem;
+}
+.u-eyebrow::before {
+  content: '';
+  width: 24px; height: 1.5px;
+  background: var(--bordeaux);
+  flex-shrink: 0;
+}
+.u-h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -.01em;
+  color: inherit;
+}
+.u-h2 em { font-style: italic; color: var(--bordeaux); }
+.u-lead {
+  font-size: 1.05rem;
+  color: var(--gris-t);
+  line-height: 1.85;
+  font-weight: 300;
+  max-width: 520px;
+}
+.u-section {
+  padding: var(--section-py) var(--section-px);
+}
+
+/* ============================================================
+   REVEAL ANIMATIONS
+   ============================================================ */
+.rv {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1);
+}
+.rv.visible { opacity:1; transform:translateY(0); }
+.rv-l {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1);
+}
+.rv-l.visible { opacity:1; transform:translateX(0); }
+
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .85rem 2rem;
+  border-radius: var(--r-sm);
+  font-size: .84rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: all .22s cubic-bezier(.2,.8,.2,1);
+  cursor: pointer;
+  border: none;
+  font-family: var(--sans);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--bordeaux);
+  color: var(--blanc);
+}
+.btn-primary:hover {
+  background: var(--bordeaux-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-bordeaux);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--noir);
+  border: 1.5px solid rgba(0,0,0,.18);
+}
+.btn-outline:hover {
+  border-color: var(--bordeaux);
+  color: var(--bordeaux);
+}
+.btn-ghost-white {
+  background: rgba(255,255,255,.12);
+  color: var(--blanc);
+  border: 1.5px solid rgba(255,255,255,.3);
+}
+.btn-ghost-white:hover {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.7);
+}
+.btn-white {
+  background: var(--blanc);
+  color: var(--bordeaux);
+  font-weight: 700;
+}
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0,0,0,.22);
+}
+.btn-arrow::after { content: '→'; font-weight: 400; }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--section-px);
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border-light);
+  transition: box-shadow .3s;
+}
+#nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,.07); }
+
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--noir);
+  letter-spacing: -.01em;
+}
+.nav-brand span { color: var(--bordeaux); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: .15rem;
+}
+.nav-links a {
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--gris-t);
+  padding: .55rem 1rem;
+  border-radius: var(--r-sm);
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--noir); }
+.nav-cta {
+  background: var(--bordeaux) !important;
+  color: var(--blanc) !important;
+  font-weight: 600 !important;
+  padding: .55rem 1.3rem !important;
+  border-radius: var(--r-sm) !important;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--bordeaux-dark) !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px; height: 1.5px;
+  background: var(--noir);
+  transition: .3s;
+}
+
+/* Mobile nav drawer */
+.nav-drawer {
+  display: none;
+  position: fixed;
+  top: 68px; left: 0; right: 0;
+  background: var(--blanc);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1.5rem var(--section-px);
+  flex-direction: column;
+  gap: .25rem;
+  z-index: 899;
+  box-shadow: var(--shadow-md);
+}
+.nav-drawer.open { display: flex; }
+.nav-drawer a {
+  font-size: .9rem;
+  color: var(--gris-t);
+  padding: .7rem 0;
+  border-bottom: 1px solid var(--border-light);
+  font-weight: 400;
+}
+.nav-drawer a:last-child { border-bottom: none; }
+.nav-drawer a:hover { color: var(--bordeaux); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+#hero {
+  min-height: 100vh;
+  background: var(--noir-2);
+  color: var(--blanc);
+  display: flex;
+  align-items: center;
+  padding: 68px var(--section-px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texture décorative */
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(150,27,30,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(150,27,30,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+  padding: 6rem 0 5rem;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  background: rgba(150,27,30,.18);
+  border: 1px solid rgba(150,27,30,.35);
+  color: #E88A8C;
+  padding: .45rem 1.1rem;
+  border-radius: 100px;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.hero-label-dot {
+  width: 6px; height: 6px;
+  background: var(--bordeaux-light);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.5; transform:scale(1.6); }
+}
+
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.015em;
+  color: var(--blanc);
+  margin-bottom: 1.75rem;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--bordeaux-light);
+}
+/* La barre verticale bordeaux — signature typographique */
+.hero-h1 .bar {
+  display: inline-block;
+  width: 3px;
+  height: .8em;
+  background: var(--bordeaux);
+  vertical-align: middle;
+  margin: 0 .1em 0 .05em;
+  border-radius: 2px;
+  animation: blink-bar 3s ease-in-out infinite;
+}
+@keyframes blink-bar { 0%,90%,100%{opacity:1} 95%{opacity:0} }
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.85;
+  font-weight: 300;
+  max-width: 460px;
+  margin-bottom: 2.75rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+.hstat {
+  flex: 1;
+  padding-right: 2.5rem;
+  border-right: 1px solid rgba(255,255,255,.09);
+  margin-right: 2.5rem;
+}
+.hstat:last-child { border-right:none; margin-right:0; padding-right:0; }
+.hstat-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--blanc);
+  letter-spacing: -.04em;
+  line-height: 1;
+  margin-bottom: .35rem;
+}
+.hstat-label {
+  display: block;
+  font-size: .68rem;
+  color: rgba(255,255,255,.4);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Hero right — dashboard */
+.hero-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--r-lg);
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--bordeaux), var(--bordeaux-light));
+}
+.hero-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+.hero-card-title {
+  font-size: .72rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.hero-card-badge {
+  background: rgba(150,27,30,.25);
+  color: #E88A8C;
+  font-size: .68rem;
+  font-weight: 700;
+  padding: .3rem .8rem;
+  border-radius: 100px;
+}
+.metric-big {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: -.04em;
+  color: var(--bordeaux-light);
+  line-height: 1;
+  margin-bottom: .4rem;
+}
+.metric-sub {
+  font-size: .78rem;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 2rem;
+}
+.progress-list { display:flex; flex-direction:column; gap:1rem; margin-bottom:1.75rem; }
+.progress-item {}
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .45rem;
+}
+.progress-label { font-size:.75rem; color:rgba(255,255,255,.6); font-weight:500; }
+.progress-val { font-size:.75rem; color:rgba(255,255,255,.35); }
+.progress-track {
+  height: 4px;
+  background: rgba(255,255,255,.07);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  border-radius: 100px;
+  animation: growBar 1.8s cubic-bezier(.16,1,.3,1) forwards;
+  transform-origin: left;
+}
+@keyframes growBar { from{width:0} }
+.pb-r { background: var(--bordeaux); }
+.pb-r2 { background: var(--bordeaux-light); }
+.pb-g { background: rgba(255,255,255,.35); }
+.pb-g2 { background: rgba(255,255,255,.2); }
+
+.mini-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+}
+.mini-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--r-sm);
+  padding: 1rem;
+}
+.mini-card-num { font-size:1.3rem; font-weight:700; letter-spacing:-.03em; color:var(--bordeaux-light); }
+.mini-card-label { font-size:.65rem; color:rgba(255,255,255,.35); margin-top:.25rem; }
+
+/* ============================================================
+   CLIENTS STRIP
+   ============================================================ */
+#clients {
+  background: var(--gris-f);
+  padding: 2.5rem var(--section-px);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+.clients-inner { max-width:var(--max-w); margin:0 auto; }
+.clients-label {
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gris-d);
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.clients-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem 2.5rem;
+}
+.client-name {
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  color: var(--gris-m);
+  transition: color .2s;
+  cursor: default;
+  user-select: none;
+}
+.client-name:hover { color: var(--gris-d); }
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+#services {
+  background: var(--blanc);
+  padding: var(--section-py) var(--section-px);
+}
+.services-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.services-devis {
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--gris-d);
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.services-devis::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--bordeaux);
+  border-radius: 50%;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: var(--blanc);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s;
+  box-shadow: var(--shadow-sm);
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(150,27,30,.15);
+}
+.service-card-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--border-light);
+  transition: background .35s;
+}
+.service-card:hover .service-card-accent { background: linear-gradient(90deg, var(--bordeaux), var(--bordeaux-light)); }
+
+/* Carte vedette */
+.service-card.featured {
+  background: var(--bordeaux);
+  border-color: transparent;
+  color: var(--blanc);
+  box-shadow: var(--shadow-bordeaux);
+}
+.service-card.featured .service-card-accent { display:none; }
+.service-card.featured:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 32px 80px rgba(150,27,30,.4);
+}
+.featured-badge {
+  position: absolute;
+  top: 1.5rem; right: -2.8rem;
+  background: var(--blanc);
+  color: var(--bordeaux);
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .4rem 3.2rem;
+  transform: rotate(45deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.service-tag {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gris-d);
+  margin-bottom: 1.5rem;
+}
+.service-card.featured .service-tag { color: rgba(255,255,255,.55); }
+
+.service-card h3 {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: .85rem;
+  color: var(--noir);
+  letter-spacing: -.01em;
+}
+.service-card.featured h3 { color: var(--blanc); }
+
+.service-desc {
+  font-size: .875rem;
+  color: var(--gris-t);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+.service-card.featured .service-desc { color: rgba(255,255,255,.7); }
+
+.service-features {
+  list-style: none;
+  margin-bottom: auto;
+}
+.service-features li {
+  font-size: .835rem;
+  color: var(--gris-t);
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  gap: .7rem;
+  align-items: flex-start;
+  line-height: 1.55;
+}
+.service-features li:last-child { border-bottom: none; }
+.service-features li strong { color: var(--noir); font-weight: 600; }
+.service-features li::before {
+  content: '→';
+  color: var(--bordeaux);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.service-card.featured .service-features li {
+  color: rgba(255,255,255,.75);
+  border-bottom-color: rgba(255,255,255,.12);
+}
+.service-card.featured .service-features li strong { color: var(--blanc); }
+.service-card.featured .service-features li::before { color: rgba(255,255,255,.7); }
+
+.service-price {
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.75rem;
+  margin-top: 1.75rem;
+}
+.service-card.featured .service-price { border-top-color: rgba(255,255,255,.15); }
+.price-tag {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gris-d);
+  display: block;
+  margin-bottom: .5rem;
+}
+.service-card.featured .price-tag { color: rgba(255,255,255,.45); }
+.price-main {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -.04em;
+  color: var(--bordeaux);
+  line-height: 1;
+}
+.service-card.featured .price-main { color: var(--blanc); }
+.price-main sub {
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--gris-d);
+  letter-spacing: 0;
+}
+.service-card.featured .price-main sub { color: rgba(255,255,255,.45); }
+.price-strike {
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--gris-d);
+  text-decoration: line-through;
+  margin-right: .4rem;
+}
+.service-card.featured .price-strike { color: rgba(255,255,255,.35); }
+.price-note {
+  font-size: .75rem;
+  color: var(--gris-d);
+  margin-top: .5rem;
+  line-height: 1.6;
+}
+.service-card.featured .price-note { color: rgba(255,255,255,.45); }
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.75rem;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  transition: gap .2s;
+  align-self: flex-start;
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 2px;
+}
+.btn-link:hover { border-color: var(--bordeaux); gap: .8rem; }
+.btn-link::after { content: '→'; font-weight: 400; }
+.service-card.featured .btn-link { color: var(--blanc); }
+.service-card.featured .btn-link:hover { border-color: var(--blanc); }
+
+.services-note {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: .82rem;
+  color: var(--gris-d);
+}
+.services-note a { color: var(--bordeaux); font-weight: 600; }
+
+/* ============================================================
+   À PROPOS
+   ============================================================ */
+#about {
+  background: var(--noir-2);
+  color: var(--blanc);
+  padding: var(--section-py) var(--section-px);
+}
+#about .u-eyebrow { color: #E88A8C; }
+#about .u-eyebrow::before { background: var(--bordeaux-light); }
+#about .u-h2 { color: var(--blanc); }
+#about .u-h2 em { color: var(--bordeaux-light); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.about-photo-wrap {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: #1C1C1C;
+  border: 1px solid var(--border-dark);
+}
+.about-photo-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.about-placeholder {
+  width:100%; height:100%;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:1rem; color:rgba(255,255,255,.15);
+}
+.about-placeholder-letter {
+  font-family: var(--serif);
+  font-size: 10rem;
+  line-height: 1;
+  color: rgba(255,255,255,.04);
+  font-style: italic;
+}
+
+.about-badge {
+  position: absolute;
+  bottom: -1rem; right: -1rem;
+  background: var(--bordeaux);
+  border-radius: var(--r-md);
+  padding: 1.35rem 1.6rem;
+  border: 3px solid var(--noir-2);
+  color: var(--blanc);
+}
+.about-badge-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -.04em;
+  display: block;
+  line-height: 1;
+}
+.about-badge-lbl {
+  font-size: .62rem;
+  font-weight: 500;
+  opacity: .7;
+  margin-top: .2rem;
+  display: block;
+}
+
+.about-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.65;
+  border-left: 2px solid var(--bordeaux);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+.about-text {
+  font-size: .9375rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+.about-text strong { color: var(--blanc); font-weight: 600; }
+
+.credentials {
+  margin-top: 2rem;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--r-md);
+  padding: 1.75rem;
+}
+.credentials-title {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--bordeaux-light);
+  margin-bottom: 1rem;
+}
+.credentials ul { list-style: none; }
+.credentials li {
+  font-size: .84rem;
+  color: rgba(255,255,255,.5);
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--border-dark);
+  line-height: 1.65;
+}
+.credentials li:last-child { border-bottom: none; }
+.credentials li::before { content: '— '; color: var(--bordeaux-light); font-family: monospace; }
+
+.tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1.75rem;
+}
+.tag {
+  font-size: .75rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.45);
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--border-dark);
+  padding: .4rem 1rem;
+  border-radius: 100px;
+  transition: color .2s, border-color .2s;
+}
+.tag:hover { color: var(--blanc); border-color: rgba(255,255,255,.25); }
+
+/* ============================================================
+   RÉSULTATS
+   ============================================================ */
+#results {
+  background: var(--gris-f);
+  padding: var(--section-py) var(--section-px);
+}
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 5rem;
+  align-items: center;
+}
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.mcard {
+  background: var(--blanc);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-md);
+  padding: 1.35rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .25s;
+}
+.mcard:hover { box-shadow: var(--shadow-md); }
+.mcard-val {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin-bottom: .3rem;
+}
+.mcard-lbl { font-size: .72rem; color: var(--gris-t); line-height:1.5; }
+.text-bordeaux { color: var(--bordeaux); }
+.text-noir { color: var(--noir); }
+
+/* Metrics panel */
+.metrics-panel {
+  background: var(--noir-2);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--r-lg);
+  padding: 2.25rem;
+  color: var(--blanc);
+}
+.metrics-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.metrics-panel-title {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+}
+.live-badge {
+  background: rgba(150,27,30,.2);
+  color: #E88A8C;
+  font-size: .62rem;
+  font-weight: 700;
+  padding: .25rem .7rem;
+  border-radius: 100px;
+  letter-spacing: .06em;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: .9rem;
+  height: 130px;
+  margin-bottom: 1.25rem;
+}
+.bar-col { display:flex; flex-direction:column; align-items:center; gap:.5rem; flex:1; }
+.bar-fill {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  background: rgba(255,255,255,.06);
+  position: relative;
+  overflow: hidden;
+}
+.bar-fill-inner {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  border-radius: 5px 5px 0 0;
+  animation: riseBar 1.4s cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes riseBar { from{height:0} }
+.bar-lbl { font-size:.6rem; color:rgba(255,255,255,.35); font-weight:500; }
+
+.panel-mcards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+}
+.panel-mcard {
+  background: rgba(255,255,255,.05);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--r-sm);
+  padding: 1.1rem;
+}
+.panel-mcard .mcard-val { font-size:1.4rem; }
+
+/* ============================================================
+   TÉMOIGNAGES
+   ============================================================ */
+#testimonials {
+  background: var(--blanc);
+  padding: var(--section-py) var(--section-px);
+}
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+.testi-card {
+  background: var(--gris-f);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  padding: 2.5rem;
+  border-bottom: 3px solid transparent;
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+.testi-card:hover {
+  border-bottom-color: var(--bordeaux);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.stars { color: #D4920A; font-size: .85rem; margin-bottom: 1.1rem; letter-spacing: .1em; }
+.testi-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--noir);
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
+}
+.testi-author { display:flex; align-items:center; gap:.75rem; }
+.avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--bordeaux-pale);
+  border: 1.5px solid var(--bordeaux-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--bordeaux);
+  flex-shrink: 0;
+}
+.testi-name { font-size:.85rem; font-weight:600; color:var(--noir); }
+.testi-role { font-size:.7rem; color:var(--gris-d); margin-top:.1rem; }
+
+.testi-cta { text-align:center; margin-top:2.5rem; }
+
+/* ============================================================
+   PARTENAIRES
+   ============================================================ */
+#partners {
+  background: var(--gris-f);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 3rem var(--section-px);
+}
+.partners-inner { max-width:var(--max-w); margin:0 auto; }
+.partners-label {
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gris-d);
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.partners-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem 1rem;
+}
+.partner-pill {
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--gris-d);
+  border: 1px solid var(--border-light);
+  padding: .5rem 1.1rem;
+  border-radius: 100px;
+  transition: color .2s, border-color .2s;
+  cursor: default;
+  background: var(--blanc);
+}
+.partner-pill:hover { color: var(--bordeaux); border-color: var(--bordeaux-mid); }
+
+/* ============================================================
+   BLOG / ACTUALITÉS
+   ============================================================ */
+#blog {
+  background: var(--noir-2);
+  color: var(--blanc);
+  padding: var(--section-py) var(--section-px);
+}
+#blog .u-eyebrow { color: #E88A8C; }
+#blog .u-eyebrow::before { background: var(--bordeaux-light); }
+#blog .u-h2 { color: var(--blanc); }
+#blog .u-h2 em { color: var(--bordeaux-light); }
+
+.blog-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+.blog-see-all {
+  font-size: .78rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.4);
+  transition: color .2s;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  padding-bottom: 2px;
+}
+.blog-see-all:hover { color: var(--blanc); }
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+.blog-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--r-lg);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: background .25s, border-color .25s, transform .25s;
+  border-bottom: 3px solid transparent;
+}
+.blog-card:hover {
+  background: rgba(255,255,255,.07);
+  border-bottom-color: var(--bordeaux);
+  transform: translateY(-4px);
+}
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1.25rem;
+}
+.blog-cat {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--bordeaux-light);
+}
+.blog-date { font-size:.68rem; color:rgba(255,255,255,.3); font-family:monospace; }
+.blog-card h3 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--blanc);
+  line-height: 1.45;
+  margin-bottom: .9rem;
+  letter-spacing: -.01em;
+}
+.blog-excerpt {
+  font-size: .84rem;
+  color: rgba(255,255,255,.45);
+  line-height: 1.8;
+  flex: 1;
+  font-weight: 300;
+}
+.blog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: 1.75rem;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--bordeaux-light);
+  transition: gap .2s;
+}
+.blog-card:hover .blog-link { gap: .7rem; }
+.blog-link::after { content: '→'; font-weight: 400; }
+
+/* ============================================================
+   CTA
+   ============================================================ */
+#cta {
+  background: var(--bordeaux);
+  padding: clamp(4rem,9vw,8rem) var(--section-px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#cta::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -20%;
+  width: 60%; height: 200%;
+  background: rgba(255,255,255,.03);
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+.cta-inner { max-width: 720px; margin: 0 auto; position: relative; }
+.cta-eyebrow {
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+}
+.cta-eyebrow::before { content:''; width:24px; height:1.5px; background:rgba(255,255,255,.35); }
+.cta-h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem,5vw,4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--blanc);
+  margin-bottom: 1.25rem;
+  letter-spacing: -.015em;
+}
+.cta-lead {
+  font-size: 1rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.8;
+  margin-bottom: 2.75rem;
+  font-weight: 300;
+}
+.cta-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.cta-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cta-trust-item {
+  font-size: .75rem;
+  color: rgba(255,255,255,.5);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.cta-trust-item::before { content: '✓'; color: rgba(255,255,255,.8); font-weight: 700; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+#contact {
+  background: var(--blanc);
+  padding: var(--section-py) var(--section-px);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.free-consult {
+  background: var(--bordeaux-pale);
+  border: 1px solid var(--bordeaux-mid);
+  border-radius: var(--r-md);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.free-consult strong { display:block; color:var(--noir); font-weight:700; margin-bottom:.2rem; font-size:.9rem; }
+.free-consult p { font-size:.83rem; color:var(--gris-t); }
+.free-consult a {
+  background: var(--bordeaux);
+  color: var(--blanc);
+  padding: .65rem 1.35rem;
+  border-radius: var(--r-sm);
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background .2s;
+}
+.free-consult a:hover { background: var(--bordeaux-dark); }
+
+.contact-info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.ci-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--r-sm);
+  background: var(--bordeaux-pale);
+  border: 1px solid var(--bordeaux-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  color: var(--bordeaux);
+}
+.ci-label {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  display: block;
+  margin-bottom: .25rem;
+}
+.ci-value { font-size: .9rem; color: var(--gris-t); }
+.ci-value a { color: inherit; transition: color .2s; }
+.ci-value a:hover { color: var(--bordeaux); }
+
+.hours-box {
+  background: var(--gris-f);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-md);
+  padding: 1.75rem;
+  margin-top: 2.5rem;
+}
+.hours-title {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  margin-bottom: 1rem;
+}
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: .85rem;
+  color: var(--gris-t);
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.hours-row:last-child { border-bottom: none; }
+
+/* Form */
+.contact-form { display:flex; flex-direction:column; gap:1rem; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: var(--gris-f);
+  border: 1.5px solid var(--border-light);
+  color: var(--noir);
+  padding: .9rem 1.1rem;
+  border-radius: var(--r-sm);
+  font-family: var(--sans);
+  font-size: .9rem;
+  outline: none;
+  transition: border-color .2s, background .2s;
+  resize: vertical;
+  -webkit-appearance: none;
+  width: 100%;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--gris-d); }
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--bordeaux);
+  background: var(--blanc);
+}
+.contact-form select option { background: var(--blanc); }
+.contact-form textarea { min-height: 140px; }
+.contact-form button {
+  background: var(--bordeaux);
+  color: var(--blanc);
+  border: none;
+  padding: 1rem 2.25rem;
+  border-radius: var(--r-sm);
+  font-family: var(--sans);
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background .2s, transform .15s;
+}
+.contact-form button:hover { background: var(--bordeaux-dark); transform: translateY(-1px); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: #060606;
+  padding: 5rem var(--section-px) 2.5rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.footer-grid {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.footer-brand {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--blanc);
+  margin-bottom: .75rem;
+  letter-spacing: -.01em;
+}
+.footer-brand span { color: var(--bordeaux-light); }
+.footer-tagline {
+  font-size: .8rem;
+  color: rgba(255,255,255,.35);
+  line-height: 1.8;
+  max-width: 260px;
+  font-weight: 300;
+}
+.footer-social { display:flex; gap:.6rem; margin-top:1.75rem; }
+.soc {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .62rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.35);
+  transition: border-color .2s, color .2s;
+}
+.soc:hover { border-color: rgba(255,255,255,.3); color: var(--blanc); }
+
+.footer-col h4 {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--bordeaux-light);
+  margin-bottom: 1.5rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: .65rem; }
+.footer-col a {
+  font-size: .82rem;
+  color: rgba(255,255,255,.35);
+  transition: color .2s;
+  font-weight: 300;
+}
+.footer-col a:hover { color: var(--blanc); }
+
+.footer-bottom {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.footer-bottom span { font-size:.7rem; color:rgba(255,255,255,.25); font-weight:300; }
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+.toast {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  background: var(--noir-2);
+  border: 1px solid rgba(255,255,255,.08);
+  border-left: 3px solid var(--bordeaux);
+  color: var(--blanc);
+  padding: 1rem 1.5rem;
+  font-size: .84rem;
+  border-radius: var(--r-md);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: .3s cubic-bezier(.2,.8,.2,1);
+  z-index: 999;
+  box-shadow: var(--shadow-lg);
+  max-width: 360px;
+}
+.toast.show { transform:translateY(0); opacity:1; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: 1fr; max-width:540px; margin:0 auto; }
+}
+
+@media (max-width: 900px) {
+  :root { --section-px: 1.25rem; }
+
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .hero-inner { grid-template-columns: 1fr; gap: 0; }
+  .hero-inner .hero-right { display: none; }
+  .hero-inner { padding: 4rem 0 4rem; }
+
+  .about-grid,
+  .results-grid,
+  .contact-grid,
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  .testi-grid,
+  .blog-grid { grid-template-columns: 1fr; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .hero-stats { gap: 0; }
+  .hstat { padding-right: 1.5rem; margin-right: 1.5rem; }
+
+  .about-photo-wrap { max-width: 340px; }
+  .about-badge { right: 0; }
+
+  .metrics-grid { grid-template-columns: 1fr 1fr; }
+  .panel-mcards { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 520px) {
+  .hero-stats { flex-wrap: wrap; }
+  .hstat { flex: none; width: 45%; border-right: none; margin-right: 0; padding-right: 0; margin-bottom: 1rem; }
+  .metrics-grid { grid-template-columns: 1fr; }
+  .testi-grid { gap: 1rem; }
+  .blog-grid { gap: 1rem; }
+  .services-grid { max-width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv, .rv-l { transition: opacity .3s; transform: none !important; }
+  @keyframes growBar { from{width:0} }
+  @keyframes riseBar { from{height:0} }
+  .hero-label-dot { animation: none; }
+  .hero-h1 .bar { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ NAVBAR -->
+<nav id="nav">
+  <a href="#hero" class="nav-brand">Inès Ngono · <span>Conseil & Formation</span></a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">À propos</a>
+    <a href="#results">Résultats</a>
+    <a href="#blog">Actualités</a>
+    <a href="#contact">Contact</a>
+    <a href="#cta" class="nav-cta">Consultation gratuite</a>
+  </div>
+  <button class="hamburger" aria-label="Ouvrir le menu" id="hamburgerBtn">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="#services" onclick="closeDrawer()">Services</a>
+  <a href="#about" onclick="closeDrawer()">À propos</a>
+  <a href="#results" onclick="closeDrawer()">Résultats</a>
+  <a href="#blog" onclick="closeDrawer()">Actualités</a>
+  <a href="#contact" onclick="closeDrawer()">Contact</a>
+  <a href="#cta" onclick="closeDrawer()" style="color:var(--bordeaux);font-weight:600;">Consultation gratuite →</a>
+</div>
+
+<!-- ============================================================ HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-label rv">
+        <span class="hero-label-dot"></span>
+        Cabinet de conseil · Lyon
+      </div>
+      <h1 class="hero-h1 rv">
+        Structurez votre vente.<br>
+        Accélérez votre<br>
+        <em>croissance<span class="bar"></span></em>
+      </h1>
+      <p class="hero-sub rv">
+        Consultante en stratégie et formatrice en vente depuis plus de 12 ans. J'accompagne écoles, entreprises et dirigeants TPE-PME avec une approche exigeante, ancrée sur le terrain.
+      </p>
+      <div class="hero-ctas rv">
+        <a href="#cta" class="btn btn-primary btn-arrow">Consultation offerte</a>
+        <a href="#services" class="btn btn-ghost-white">Voir les offres</a>
+      </div>
+      <div class="hero-stats rv">
+        <div class="hstat">
+          <span class="hstat-num">+500</span>
+          <span class="hstat-label">Vendeurs formés</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-num">+12</span>
+          <span class="hstat-label">Ans en vente</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-num">+15</span>
+          <span class="hstat-label">Ans d'entrepreneuriat</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right rv">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span class="hero-card-title">Performance commerciale</span>
+          <span class="hero-card-badge">↑ +38% CA</span>
+        </div>
+        <div class="metric-big">94%</div>
+        <p class="metric-sub">Taux de satisfaction client</p>
+        <div class="progress-list">
+          <div class="progress-item">
+            <div class="progress-header"><span class="progress-label">Techniques de vente</span><span class="progress-val">96%</span></div>
+            <div class="progress-track"><div class="progress-bar pb-r" style="width:96%"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header"><span class="progress-label">Stratégie commerciale</span><span class="progress-val">91%</span></div>
+            <div class="progress-track"><div class="progress-bar pb-r2" style="width:91%"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header"><span class="progress-label">Positionnement marché</span><span class="progress-val">88%</span></div>
+            <div class="progress-track"><div class="progress-bar pb-g" style="width:88%"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header"><span class="progress-label">Insertion professionnelle</span><span class="progress-val">82%</span></div>
+            <div class="progress-track"><div class="progress-bar pb-g2" style="width:82%"></div></div>
+          </div>
+        </div>
+        <div class="mini-cards">
+          <div class="mini-card">
+            <div class="mini-card-num">+500</div>
+            <div class="mini-card-label">Vendeurs formés</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-num">100%</div>
+            <div class="mini-card-label">Accrédités Académie Lyon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CLIENTS -->
+<div id="clients">
+  <div class="clients-inner">
+    <p class="clients-label">Ils m'ont fait confiance</p>
+    <div class="clients-row">
+      <span class="client-name">Académie de Lyon</span>
+      <span class="client-name">Lycée des Canuts</span>
+      <span class="client-name">Galeries Lafayette</span>
+      <span class="client-name">Villeroy &amp; Boch</span>
+      <span class="client-name">SEPR</span>
+      <span class="client-name">Le Printemps Lyon</span>
+      <span class="client-name">Cité Scolaire Internationale</span>
+      <span class="client-name">Esprit</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ SERVICES -->
+<section id="services" class="u-section">
+  <div class="u-container">
+    <div class="services-head rv">
+      <div>
+        <div class="u-eyebrow">Mes offres</div>
+        <h2 class="u-h2">Trois formules,<br>un seul <em>objectif</em></h2>
+        <p class="u-lead" style="margin-top:1rem;">Accompagner la montée en compétences pour soutenir votre croissance et faciliter l'insertion sur le marché.</p>
+      </div>
+      <div class="services-devis">Devis personnalisé sous 24h</div>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Carte 1 -->
+      <div class="service-card rv">
+        <div class="service-card-accent"></div>
+        <div class="service-tag">I — Formation</div>
+        <h3>Formation Commerce &amp; Vente</h3>
+        <p class="service-desc">Modules conçus sur mesure pour les écoles et les équipes commerciales, axés sur les techniques modernes de vente et la relation client.</p>
+        <ul class="service-features">
+          <li><strong>Modules sur mesure</strong> pour lycées, écoles de commerce et équipes commerciales</li>
+          <li><strong>Techniques de vente</strong> en face-à-face et à distance</li>
+          <li><strong>Relation client</strong>, argumentation et négociation</li>
+          <li>Formations <strong>accréditées</strong> — Académie de Lyon, S.A.A.R., CAAC</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-tag">Tarif indicatif</span>
+          <div style="display:flex;align-items:baseline;gap:.5rem;">
+            <span class="price-main">300 €<sub> /jour</sub></span>
+          </div>
+          <p class="price-note">Intervention en école ou entreprise · devis selon durée et contenu</p>
+        </div>
+        <a href="#contact" class="btn-link">Demander un devis</a>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="service-card rv">
+        <div class="service-card-accent"></div>
+        <div class="service-tag">II — Conseil</div>
+        <h3>Séance Stratégique Individuelle</h3>
+        <p class="service-desc">Une séance ponctuelle pour faire le point, clarifier une décision ou structurer une première étape de votre projet.</p>
+        <ul class="service-features">
+          <li><strong>Séance unique</strong> pour créateurs et dirigeants TPE-PME</li>
+          <li><strong>Diagnostic</strong> et positionnement marché</li>
+          <li><strong>Plan d'action</strong> concret en fin de séance</li>
+          <li><strong>Sans engagement</strong> · en ligne ou présentiel</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-tag">Séance individuelle</span>
+          <div style="display:flex;align-items:baseline;gap:.5rem;">
+            <span class="price-main">60 €<sub> /séance</sub></span>
+          </div>
+          <p class="price-note">Idéal pour un besoin ponctuel et bien défini</p>
+        </div>
+        <a href="#contact" class="btn-link">Réserver une séance</a>
+      </div>
+
+      <!-- Carte 3 vedette -->
+      <div class="service-card featured rv">
+        <div class="featured-badge">Le plus choisi</div>
+        <div class="service-tag">III — Pack Accompagnement</div>
+        <h3>Pack 3 Séances de Conseil</h3>
+        <p class="service-desc">L'accompagnement le plus complet pour structurer durablement votre projet et votre développement commercial, étape par étape.</p>
+        <ul class="service-features">
+          <li><strong>3 séances individuelles</strong> de suivi stratégique</li>
+          <li><strong>Structuration de projet</strong> et plan de croissance</li>
+          <li><strong>Marchés français &amp; internationaux</strong></li>
+          <li><strong>1ère consultation offerte</strong> · suivi en ligne ou présentiel</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-tag">Tarif préférentiel pack</span>
+          <div style="display:flex;align-items:baseline;gap:.5rem;">
+            <span class="price-strike">60 €</span>
+            <span class="price-main">50 €<sub> /séance</sub></span>
+          </div>
+          <p class="price-note">Soit 150 € pour 3 séances · 1ère prise de contact gratuite</p>
+        </div>
+        <a href="#cta" class="btn-link">Choisir le pack</a>
+      </div>
+
+    </div>
+    <p class="services-note">Besoin d'un format différent ? <a href="#contact">Contactez-moi</a> pour un programme entièrement personnalisé.</p>
+  </div>
+</section>
+
+<!-- ============================================================ À PROPOS -->
+<section id="about">
+  <div class="u-container" style="max-width:var(--max-w);margin:0 auto;">
+    <div class="about-grid">
+      <div class="rv">
+        <div class="about-photo-wrap">
+          <img src="ines-portrait.jpg" alt="Inès Ngono"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="about-placeholder" style="display:none;">
+            <div class="about-placeholder-letter">IN</div>
+          </div>
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-num">+15</span>
+          <span class="about-badge-lbl">ans d'expérience</span>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="u-eyebrow">À propos</div>
+        <h2 class="u-h2">Inès <em>Ngono</em></h2>
+        <blockquote class="about-quote">« Il n'existe pas de petites ressources, seulement de grandes idées. »</blockquote>
+        <p class="about-text">Consultante en stratégie diplômée et professeure de vente, <strong>Inès Ngono</strong> accompagne entreprises, écoles et organisations depuis la création de son cabinet à Lyon en 2020.</p>
+        <p class="about-text">Avec plus de <strong>15 ans d'entrepreneuriat</strong> et <strong>12 ans de spécialisation en vente</strong>, elle a formé plus de 500 futurs vendeurs et conseillé de nombreuses TPE-PME dans leur développement.</p>
+        <div class="credentials">
+          <div class="credentials-title">Formation académique</div>
+          <ul>
+            <li>Master 2 Information-Communication, Stratégie de marque — Univ. Lumière Lyon 2</li>
+            <li>Licence Information-Communication — ICOM, Univ. Lumière Lyon 2</li>
+            <li>Certificat de compétences en management des équipes — ESIC</li>
+          </ul>
+        </div>
+        <div class="tags-wrap">
+          <span class="tag">Formation commerciale</span>
+          <span class="tag">Stratégie</span>
+          <span class="tag">Management</span>
+          <span class="tag">Accompagnement dirigeants</span>
+          <span class="tag">Marchés FR &amp; International</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ RÉSULTATS -->
+<section id="results" class="u-section">
+  <div class="u-container">
+    <div class="results-grid">
+      <div class="rv">
+        <div class="u-eyebrow">Résultats mesurables</div>
+        <h2 class="u-h2">Des formations qui<br><em>performent</em></h2>
+        <p class="u-lead" style="margin-top:1rem;">Chaque programme est conçu pour produire des résultats mesurables — en salle de classe comme sur le terrain commercial.</p>
+        <div class="metrics-grid">
+          <div class="mcard"><div class="mcard-val text-bordeaux">+38%</div><div class="mcard-lbl">Chiffre d'affaires moyen après accompagnement</div></div>
+          <div class="mcard"><div class="mcard-val text-bordeaux">94%</div><div class="mcard-lbl">Taux de satisfaction des apprenants</div></div>
+          <div class="mcard"><div class="mcard-val text-noir">+500</div><div class="mcard-lbl">Vendeurs formés en 5 ans</div></div>
+          <div class="mcard"><div class="mcard-val text-noir">3 mois</div><div class="mcard-lbl">Délai moyen pour des résultats visibles</div></div>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="metrics-panel">
+          <div class="metrics-panel-header">
+            <span class="metrics-panel-title">Performance par domaine</span>
+            <span class="live-badge">● En ligne</span>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-col">
+              <div class="bar-fill" style="height:100%"><div class="bar-fill-inner" style="height:92%;background:var(--bordeaux)"></div></div>
+              <span class="bar-lbl">Vente</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill" style="height:100%"><div class="bar-fill-inner" style="height:84%;background:var(--bordeaux-light)"></div></div>
+              <span class="bar-lbl">Stratégie</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill" style="height:100%"><div class="bar-fill-inner" style="height:78%;background:rgba(255,255,255,.35)"></div></div>
+              <span class="bar-lbl">Gestion</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill" style="height:100%"><div class="bar-fill-inner" style="height:88%;background:rgba(255,255,255,.2)"></div></div>
+              <span class="bar-lbl">Relation</span>
+            </div>
+            <div class="bar-col">
+              <div class="bar-fill" style="height:100%"><div class="bar-fill-inner" style="height:70%;background:rgba(150,27,30,.55)"></div></div>
+              <span class="bar-lbl">Insertion</span>
+            </div>
+          </div>
+          <div class="panel-mcards">
+            <div class="panel-mcard"><div class="mcard-val text-bordeaux">5,0 ★</div><div class="mcard-lbl">Note Google moyenne</div></div>
+            <div class="panel-mcard"><div class="mcard-val" style="color:rgba(255,255,255,.8)">100%</div><div class="mcard-lbl">Accréditation académique</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TÉMOIGNAGES -->
+<section id="testimonials" class="u-section">
+  <div class="u-container">
+    <div class="rv">
+      <div class="u-eyebrow">Avis clients</div>
+      <h2 class="u-h2">Ce qu'ils disent sur <em>Google</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card rv">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">« Inès a une pédagogie remarquable. Ses interventions au lycée ont transformé l'approche commerciale de nos élèves. Je recommande vivement. »</p>
+        <div class="testi-author">
+          <div class="avatar">SM</div>
+          <div>
+            <div class="testi-name">Sophie M.</div>
+            <div class="testi-role">Directrice pédagogique · il y a 2 mois</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card rv">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">« Un accompagnement vraiment structurant. En 3 séances, j'ai clarifié mon positionnement et défini un plan d'action concret pour mon lancement. »</p>
+        <div class="testi-author">
+          <div class="avatar">LB</div>
+          <div>
+            <div class="testi-name">Laurent B.</div>
+            <div class="testi-role">Dirigeant TPE · il y a 3 mois</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card rv">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">« Professionnalisme, écoute et expertise terrain. Inès m'a aidée à repositionner mon offre. Résultats visibles dès le premier mois. »</p>
+        <div class="testi-author">
+          <div class="avatar">NK</div>
+          <div>
+            <div class="testi-name">Nadia K.</div>
+            <div class="testi-role">Créatrice d'entreprise · il y a 4 mois</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-cta rv">
+      <a href="https://www.google.com/search?q=Conseil+et+formation+-+Ines+Ngono+Lyon" target="_blank" class="btn btn-outline">Voir tous les avis Google →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PARTENAIRES -->
+<div id="partners">
+  <div class="partners-inner">
+    <p class="partners-label">Références professionnelles</p>
+    <div class="partners-row">
+      <span class="partner-pill">Pignol</span>
+      <span class="partner-pill">Le Printemps de Lyon</span>
+      <span class="partner-pill">Galeries Lafayette</span>
+      <span class="partner-pill">Esprit</span>
+      <span class="partner-pill">Villeroy &amp; Boch</span>
+      <span class="partner-pill">Exodus</span>
+      <span class="partner-pill">Karboon</span>
+      <span class="partner-pill">Lycée Saint-Joseph</span>
+      <span class="partner-pill">LJPRO</span>
+      <span class="partner-pill">Art &amp; Table</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ BLOG -->
+<section id="blog">
+  <div class="u-container" style="max-width:var(--max-w);margin:0 auto;">
+    <div class="blog-head">
+      <div class="rv">
+        <div class="u-eyebrow">Le Mag</div>
+        <h2 class="u-h2">Dernières <em>actualités</em></h2>
+      </div>
+      <a href="https://conseiletformation.com" target="_blank" class="blog-see-all rv">Voir tous les articles →</a>
+    </div>
+    <div class="blog-grid">
+      <a href="https://conseiletformation.com/de-lidee-au-produit-retour-sur-un-projet-pedagogique-concret/" target="_blank" class="blog-card rv">
+        <div class="blog-meta"><span class="blog-cat">Le Mag</span><span class="blog-date">17 avr. 2026</span></div>
+        <h3>De l'idée au produit : retour sur un projet pédagogique concret</h3>
+        <p class="blog-excerpt">31 élèves, un budget de 164 € et une idée simple — un projet validé qui illustre parfaitement la devise du cabinet.</p>
+        <span class="blog-link">Lire l'article</span>
+      </a>
+      <a href="https://conseiletformation.com/restauration-vs-patisserie-ou-investir-aujourdhui/" target="_blank" class="blog-card rv">
+        <div class="blog-meta"><span class="blog-cat">Analyse</span><span class="blog-date">15 avr. 2026</span></div>
+        <h3>Restauration vs pâtisserie : où investir aujourd'hui ?</h3>
+        <p class="blog-excerpt">Inflation, hausse des coûts, pression sur les marges… Lequel offre les meilleures perspectives ? Analyse et leviers.</p>
+        <span class="blog-link">Lire l'article</span>
+      </a>
+      <a href="https://conseiletformation.com/ce-quil-faut-faire-pour-construire-largumentaire-de-vente-pour-bien-vendre-son-produit/" target="_blank" class="blog-card rv">
+        <div class="blog-meta"><span class="blog-cat">Conseil</span><span class="blog-date">9 févr. 2026</span></div>
+        <h3>Comment construire un argumentaire de vente efficace</h3>
+        <p class="blog-excerpt">La difficulté à conclure vient rarement d'un manque de motivation, mais d'un argumentaire mal structuré.</p>
+        <span class="blog-link">Lire l'article</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA -->
+<section id="cta">
+  <div class="cta-inner rv">
+    <div class="cta-eyebrow">Prêt à démarrer ?</div>
+    <h2 class="cta-h2">Première consultation<br>offerte — 30 minutes</h2>
+    <p class="cta-lead">Audit gratuit de vos besoins commerciaux ou stratégiques.<br>Sans engagement, sans jargon — juste des actions concrètes.</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn btn-white">Réserver maintenant</a>
+      <a href="#services" class="btn btn-ghost-white">Découvrir les offres</a>
+    </div>
+    <div class="cta-trust">
+      <span class="cta-trust-item">Première séance offerte</span>
+      <span class="cta-trust-item">En ligne ou présentiel</span>
+      <span class="cta-trust-item">Réponse sous 24h</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CONTACT -->
+<section id="contact" class="u-section">
+  <div class="u-container">
+    <div class="rv" style="margin-bottom:3.5rem;">
+      <div class="u-eyebrow">Contact</div>
+      <h2 class="u-h2">Parlons de<br>votre <em>projet</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="free-consult rv">
+          <div>
+            <strong>Première consultation offerte</strong>
+            <p>Audit gratuit de 30 minutes pour évaluer vos besoins.</p>
+          </div>
+          <a href="tel:+33652768159">Appeler →</a>
+        </div>
+        <div class="contact-info-item rv">
+          <div class="ci-icon">✉</div>
+          <div>
+            <span class="ci-label">E-mail</span>
+            <span class="ci-value"><a href="mailto:ngonoines@yahoo.fr">ngonoines@yahoo.fr</a></span>
+          </div>
+        </div>
+        <div class="contact-info-item rv">
+          <div class="ci-icon">☎</div>
+          <div>
+            <span class="ci-label">Téléphone</span>
+            <span class="ci-value"><a href="tel:+33652768159">06 52 76 81 59</a></span>
+          </div>
+        </div>
+        <div class="contact-info-item rv">
+          <div class="ci-icon">◎</div>
+          <div>
+            <span class="ci-label">Zone d'intervention</span>
+            <span class="ci-value">Lyon &amp; Auvergne-Rhône-Alpes<br><small style="opacity:.6;">Consultations en ligne disponibles</small></span>
+          </div>
+        </div>
+        <div class="hours-box rv">
+          <div class="hours-title">Horaires</div>
+          <div class="hours-row"><span>Lundi – Jeudi</span><span>9h–18h</span></div>
+          <div class="hours-row"><span>Vendredi</span><span>9h–17h</span></div>
+          <div class="hours-row"><span>Week-end</span><span>Sur RDV</span></div>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form rv" onsubmit="handleContact(event)">
+          <div class="form-row">
+            <input type="text" placeholder="Prénom *" required/>
+            <input type="text" placeholder="Nom *" required/>
+          </div>
+          <input type="email" placeholder="E-mail *" required/>
+          <input type="tel" placeholder="Téléphone (optionnel)"/>
+          <select required>
+            <option value="" disabled selected>Objet de la demande *</option>
+            <option>Formation en vente – école</option>
+            <option>Formation en vente – entreprise</option>
+            <option>Conseil en stratégie individuel</option>
+            <option>Pack 3 séances de conseil</option>
+            <option>Partenariat / autre</option>
+          </select>
+          <textarea placeholder="Décrivez brièvement votre projet…" required></textarea>
+          <button type="submit">Envoyer le message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Inès Ngono · <span>Conseil &amp; Formation</span></div>
+      <p class="footer-tagline">Faciliter votre insertion sur le marché, structurer votre vision, accélérer votre croissance.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/ngonoines1/" target="_blank" class="soc">fb</a>
+        <a href="https://www.youtube.com/@ngonoines" target="_blank" class="soc">yt</a>
+        <a href="https://www.linkedin.com/in/ines-ngono/" target="_blank" class="soc">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Formation en vente</a></li>
+        <li><a href="#services">Conseil en stratégie</a></li>
+        <li><a href="#cta">Consultation gratuite</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#about">Qui suis-je ?</a></li>
+        <li><a href="#results">Résultats</a></li>
+        <li><a href="#blog">Actualités</a></li>
+        <li><a href="#testimonials">Avis Google</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2020–2026 Cabinet Conseil &amp; Formation · Inès Ngono · Lyon</span>
+    <span>Mentions légales · Politique de confidentialité</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---- Navbar scroll + hamburger ---- */
+const nav = document.getElementById('nav');
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navDrawer = document.getElementById('navDrawer');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+hamburgerBtn.addEventListener('click', () => {
+  navDrawer.classList.toggle('open');
+});
+
+function closeDrawer() {
+  navDrawer.classList.remove('open');
+}
+
+/* ---- Reveal on scroll ---- */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 55);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.07 });
+
+document.querySelectorAll('.rv, .rv-l').forEach(el => observer.observe(el));
+
+/* ---- Toast ---- */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+
+/* ---- Contact form ---- */
+function handleContact(e) {
+  e.preventDefault();
+  showToast('Message envoyé — réponse sous 24h. Merci !');
+  e.target.reset();
+}
+</script>
+</body>
+</html>
