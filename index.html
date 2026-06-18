@@ -279,8 +279,10 @@ a { text-decoration:none; color:inherit; }
    ============================================================ */
 #hero {
   min-height: 100vh;
-  background: var(--noir-2);
-  color: var(--blanc);
+  background:
+    radial-gradient(circle at top right, rgba(150,27,30,0.08), transparent 35%),
+    linear-gradient(135deg, #ffffff 0%, #f4f4f3 100%);
+  color: var(--noir);
   display: flex;
   align-items: center;
   padding: 68px var(--section-px) 0;
@@ -351,12 +353,12 @@ a { text-decoration:none; color:inherit; }
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -.015em;
-  color: var(--blanc);
+  color: var(--noir);
   margin-bottom: 1.75rem;
 }
 .hero-h1 em {
   font-style: italic;
-  color: var(--bordeaux-light);
+  color: var(--bordeaux);
 }
 /* La barre verticale bordeaux — signature typographique */
 .hero-h1 .bar {
