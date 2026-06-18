@@ -375,7 +375,7 @@ a { text-decoration:none; color:inherit; }
 
 .hero-sub {
   font-size: 1.05rem;
-  color: rgba(255,255,255,.55);
+  color: #5f5b57;
   line-height: 1.85;
   font-weight: 300;
   max-width: 460px;
@@ -422,10 +422,11 @@ a { text-decoration:none; color:inherit; }
 
 /* Hero right — dashboard */
 .hero-card {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.10);
+  background: var(--bordeaux);
+  border: 1px solid rgba(255,255,255,.15);
   border-radius: var(--r-lg);
   padding: 2rem;
+  box-shadow: 0 25px 70px rgba(150,27,30,.30);
   backdrop-filter: blur(8px);
   position: relative;
   overflow: hidden;
@@ -1569,6 +1570,39 @@ footer {
   @keyframes riseBar { from{height:0} }
   .hero-label-dot { animation: none; }
   .hero-h1 .bar { animation: none; }
+}
+.hero-card-title,
+.metric-sub,
+.progress-label,
+.progress-val,
+.mini-card-label {
+  color: rgba(255,255,255,.75);
+}
+
+.metric-big,
+.mini-card-num {
+  color: #ffffff;
+}
+
+.hero-card-badge {
+  background: rgba(255,255,255,.18);
+  color: white;
+}
+
+.progress-track {
+  background: rgba(255,255,255,.25);
+}
+
+.pb-r,
+.pb-r2,
+.pb-g,
+.pb-g2 {
+  background: white;
+}
+
+.mini-card {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.2);
 }
 </style>
 </head>
